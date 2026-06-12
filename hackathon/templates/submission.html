@@ -1,0 +1,40 @@
+{% extends "hack_base.html" %}
+{% load static %}
+
+{% block title %} Submission {% endblock %}
+
+{% block extra_css %}
+    {% static "css/submission.css" %}
+{% endblock %}
+
+{% block sidebar %}
+    {% include "hack_sidebar.html" %}
+{% endblock %}
+
+{% block content %}
+
+    {% include 'hack_con_sidebar.html' %}
+
+    <br>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <label for="title">Title <span class="star">*</span></label>
+        <input type="text" id="title" name="submission_title" placeholder="Submission Title">
+
+        <br>
+
+        <textarea name="submission_description" placeholder="Submission Description"></textarea>
+        
+        <br>
+        
+        <input type="file" name="submission_file">
+
+        <br>
+
+        <input type="text" name="submission_url" placeholder="Submission URL">
+
+        <br>
+
+        <button type="submit">Submit</button>
+    </form>
+{% endblock %}

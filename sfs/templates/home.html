@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Home || Ashok SFS {% endblock %} 
+
+{% block css %} {% static "css/sidebar.css" %} {% endblock %}
+
+{% block navbar %}
+    {% include "sidebar.html" %}
+{% endblock %}
+
+{% block content %}
+
+    <style>
+        .bp_img {
+            width: 100%
+        }
+
+        .blueprint_box p {
+            color: var(--gray-400)
+        }
+
+        .blueprint_box h2 {
+            margin-top: 1.5rem;
+            font-size: 18px;
+            font-weight: 700;
+
+        }
+
+        .blueprint_box:hover {    
+            transform: translateY(-6px);
+            box-shadow: 0 10px 25px rgba(128,0,255,0.25);
+            cursor: pointer
+        }
+
+        .blueprint_box a {
+            color: white
+        }
+    </style>
+
+    <div class="bread_crumb">
+        <p>&gt; <a href="{% url 'home' %}">
+            <svg  width="16" height="16" fill="currentColor" class="as as-house-door" viewBox="0 0 16 16">
+                <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4z"/>
+            </svg>
+        </a></p>
+    </div>
+
+
+    <div class="categories">
+        {% for category in categories %}
+            {% if category.blueprint_count != 0 %}
+            <div class="blueprint_box">
+                <a href="{% url 'category' %}?category_id={{ category.category_id }}">
+                    <img src="{{ img_url }}{{ category.bp_img }}" loading="lazy" alt="logo" class="bp_img" fetchpriority="high" align="center" loading="lazy">
+                    <h2 align="center">{{ category.bp_name }}</h2>
+                    
+                    <p>{{ category.blueprint_count }} Blueprints</p>
+                </a>
+            </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% endblock %}|| Hackathon </title>
+    <link rel="stylesheet" href="{% static 'css/hack_sidebar.css' %}">
+    <link rel="icon" href="{{ images }}favicon.ico"/>
+    <link rel="stylesheet" href="{% block extra_css %} {% endblock %}">
+</head>
+<body>
+
+    {% block sidebar %}
+    {% endblock %}
+    <div class="container">
+        <div class="content">
+            <br>
+            <br>
+            {% block content %}
+
+            {% endblock %}
+            <br>
+            <br>
+        </div>
+    </div>
+</body>
+</html>

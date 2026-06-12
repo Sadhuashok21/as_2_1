@@ -1,0 +1,434 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'cambria math';
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.4);
+    overflow-x: hidden;
+
+}
+
+.all_con {
+    
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+}
+
+
+.background-clip{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+
+
+.upbar {
+    position: fixed;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+    background-color:  rgba(2, 52, 52, 0.715);
+    z-indeX: 100
+}
+
+.upbar a {
+    color: white;
+    text-decoration: none;
+}
+
+.upbar a:hover {
+    padding: .5rem;
+    border-radius: .5rem;
+    color: black;
+    background: rgb(2, 208, 208);
+    opacity: 90%;
+}
+
+.upbar .upbar_lists {
+    display: flex;
+    list-style-type: none;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.upbar .logo {
+    width: 70px;
+    height: 60px;
+    cursor: pointer;
+    margin-left: 1rem;
+}
+
+.content {
+    color: white;
+}
+
+.content .info {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100vw;
+}
+
+.content .as_logo {
+    width: 300px;
+    height: 300px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.content .as_logo:hover {
+    transform: translateY(-20px);
+}
+
+.content p {
+    width: 500px;
+    text-indent: 1rem;;
+}
+
+.content .signin_but {
+    width: 200px;
+    height: 30px;
+    border-radius: .5rem;
+    background: rgb(76, 219, 219);
+    color: black;
+    border-color: aqua;
+    font-weight: 700;
+    cursor: pointer;
+    margin: 1rem;
+}
+
+
+.content .social_media_icons {
+    list-style-type: none;
+    display: flex;
+    margin-left: 1rem;
+    justify-content: space-evenly;
+}
+
+.content .social_media_icons a {
+    color: white;
+}
+
+.content .social_media_icons li {
+    margin-right: .5rem;
+}
+
+.content .social_media_icons li .as {
+    width: 20px;
+    height: 20px;
+}
+
+.second_section {
+    height: 100vh
+}
+
+.second_section h2 {
+    color: white;
+    margin-left: 1rem;
+}
+
+.boxes_con a {
+    color: white
+}
+
+.ascnote_box, .sonicora_box, .skiltrix_box, .ashok_sfs_box {
+    width: 250px;
+    height: 330px;
+    background-color: rgba(3, 81, 81, 0.715);
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    border-radius: .5rem;
+    transition: all 0.3s ease;
+    margin-left: 1rem;
+    color: white;
+    padding: .5rem;
+    cursor: pointer;
+}
+
+.ascnote_box:hover, .sonicora_box:hover, .skiltrix_box:hover {
+    transform: translateY(-10px);
+    background-color: rgba(1, 154, 154, 0.715);;
+}
+
+.boxes_con {
+    display: flex;
+    justify-content: center;
+}
+
+.third_section, .fourth_section, .fifth_section, .sixth_section {
+    height: 70vh;
+    color: white;
+}
+
+.third_section .ascnote, .fourth_section .sonicora, .fifth_section .skiltrix, .sixth_section .ashoksfs {
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.third_section .ascnote p, .fourth_section .sonicora p, .fifth_section .skiltrix p, .sixth_section .ashoksfs p {
+    width: 50vw;
+    
+    text-align: justify;
+}
+
+.third_section .ascnote .ascnote_but, .fourth_section .sonicora .sonicora_but, .fifth_section .skiltrix .skiltrix_but, .sixth_section .ashoksfs .ashoksfs_but {
+    width: 150px;
+    height: 50px;
+    border-radius: .5rem;
+    margin: 1rem;
+    font-weight: 700;
+    font-size: 16px;
+    background-color: rgb(76, 219, 219);
+    cursor: pointer;
+    
+}
+
+
+
+.third_section h2, .fourth_section h2, .fifth_section h2, .sixth_section h2 {
+    margin-left: 1rem;;
+}
+
+
+.third_section .ascnote_lo, .fourth_section .sonicora_lo, .fifth_section .skiltrix .skiltrix_lo, .sixth_section .ashoksfs .ashoksfs_lo {
+    width: 200px;
+    height: 200px;
+}
+
+.footer {
+    color: white;
+    background-color: black;
+    width: 100vw;
+    height: 50vh;
+    display: grid;
+    align-items: center;
+}
+
+.footer_con {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+
+.footer .footer_as_lo {
+    width: 200px;
+    height: 200px;
+}
+
+.footer .social_media_icons {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    color: white;
+    justify-content: space-evenly;
+    width: 200px;
+}
+
+.footer .terms_list, .footer .service_list {
+    list-style-type: none;
+}
+
+.footer  a {
+    color: white;
+    text-decoration: none;
+}
+
+
+
+
+
+.ascnote_logo {
+    width: 200px;
+    height: 200px;
+}
+
+/* ::-webkit-scrollbar {
+    width: 20px;
+    scrollbar-color: blue;
+} */
+
+
+.grid_sidebar {
+  display: none;
+  position: fixed;
+  right: 0;
+  height: 100%;
+  background: rgba(2, 52, 52, 0.715);
+  z-index: 101;
+  width: 150px;
+  top: 60px;
+}
+
+.grid {
+  display: none;
+}
+
+.grid_sidebar ul {
+  list-style-type: none;
+}
+
+.grid_sidebar ul li {
+  padding: .5rem;
+  border: 1px solid aqua;
+  border-radius: .5rem;
+  margin: .5rem;
+}
+
+.grid_sidebar a {
+  text-decoration: none;
+  color: white;
+}
+
+.grid_sidebar.active {
+  display: block;
+}
+.x_into .as-x-lg {
+  width: 25px;
+  height: 25px;
+  color: white;
+  
+}
+
+.x_into {
+    position: fixed;
+    right: 11px;
+    top: 15px;
+}
+
+.grid .as-list {
+  width: 30px;
+  height: 30px;
+  color: white;
+  margin-right: 2rem;;
+}
+
+
+@media only screen and (min-width: 0px) and (max-width: 600px) {
+  .upbar .upbar_lists {
+    display: none;
+  }
+   
+  .grid {
+    display: block;
+  }
+
+  .all_con {
+    height: initial;
+  }
+
+  .third_section .ascnote, .fourth_section .sonicora, .fifth_section .skiltrix, .sixth_section .ashoksfs {
+    display: grid;
+    justify-items: center;
+    margin: 1rem;
+  }
+
+  .third_section, .fourth_section, .fifth_section, .sixth_section {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+  }
+
+}
+
+
+
+
+@media (min-aspect-ratio:16/9) {
+    .background-clip{
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-aspect-ratio:16/9) {
+    .background-clip{
+        width: auto;
+        height: 100%;
+    }
+}
+
+@media only screen and (min-width: 250px) and (max-width: 600px) {
+    .content .info {
+        display: grid;
+        justify-items: center;
+        height: 100vh;
+        margin-top: 8rem;
+        margin-lefT: 1rem;
+    }
+
+    .content .info p {
+        width: 400px;
+    }
+
+    .content .info .signin_but {
+        width: 150px;
+    }
+
+    .second_section {
+        height: 230vh;
+    }
+
+    .boxes_con {
+        display: grid;
+        
+    }
+
+    .ascnote_box, .skiltrix_box {
+        margin: 1rem;
+    }
+
+    .ascnote_disp, .sonicora_disp, .skiltrix_disp, .sfs_disp {
+        display: none;
+    }
+
+    .third_section .ascnote_lo, .fourth_section .sonicora_lo, .fifth_section .skiltrix .skiltrix_lo {
+        width: 100px;
+        height: 100px;
+    }
+
+    .third_section .ascnote p, .fourth_section .sonicora p, .fifth_section .skiltrix p, .sixth_section .ashoksfs p {
+        width: 60vw;
+    }
+
+    .footer_con {
+        display: grid;
+    }
+
+    .footer .footer_as_lo {
+        width: 100px;
+        height: 100px;
+    }
+
+    .footer .social_media_icons {
+        width: 150px;
+    }
+
+    .footer .terms_list li, .footer .service_list li {
+        margin: .5rem;
+    }
+
+    
+}
+
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+    .boxes_con {
+        display: grid;
+    }    
+}

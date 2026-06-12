@@ -1,0 +1,339 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: inherit;
+    font-size: 16px;
+}
+
+
+:root {
+    --sidebar: #07101F;
+    --s-hover: #11213D;
+    --s-text: #EAF4FF;
+    --toolbar: rgba(7,16,31,0.85);
+    --main-con: #050816;
+    --success: #00E6A7;
+    --warning: #FFC857;
+    --error: #FF5C7A;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.4);
+    overflow-x: hidden;
+    color: white
+}
+
+.background-clip{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+
+
+@media (max-aspect-ratio: 16 / 9) {
+    .background-clip {
+        width: auto;
+        height: 100%;
+    }
+}
+
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+
+ul {
+    list-style-type: none
+}
+
+
+
+
+/* toolbar starts */
+
+.toolbar {
+    justify-content: space-between;
+    position: sticky;
+    height: 40px;
+}
+
+.logo-con, .toolbar {
+    display: flex;
+    align-items: center;
+
+}
+
+.logo-con {
+    margin-left: 10px;
+}
+
+.toolbar ul, .toolbar .tool-items {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    min-width: 400px;
+
+}
+
+
+.toolbar .register {
+    width: 100px;height: 40px;
+    margin-right: 10px
+}
+
+/* toolbar ends */
+
+
+
+/* common head */
+
+.timeline h1, .why-participation h1, .prize h1, .sponsors h1 {
+    font-size: 30px;
+}
+
+/* common head ends */
+
+/* interface starts */
+
+
+
+.interface_con h1 {
+    font-size: 60px;
+    background: linear-gradient(90deg,#5a6cff,#00d4ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    display:inline-block;
+}
+
+.interface_con .ai_text {
+    font-size: 60px;
+}
+
+.interface_con h2 {
+    font-size: 25px;
+}
+
+
+.interface_con p {
+    color: var(--s-text);
+    max-width: 400px
+}
+
+
+.register {
+    background: linear-gradient(90deg,#5a6cff,#00d4ff);
+    color: white;
+    background-clip: text;
+    -webkit-background-clip: text;
+    border: 2px solid transparent;
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    border-radius: .5rem;
+}
+
+.interface {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+
+
+.interface_con button {
+    width: 150px;
+    height: 40px;
+    border-radius: .5rem;
+    cursor: pointer;
+    font-weight: 800;
+
+}
+
+
+/* interface ends */
+
+
+/* timeline starts */
+
+
+.timeline {
+    display: grid;
+    margin: 1rem;
+    justify-content: center;
+}
+
+
+.t-boxes{
+    position: relative;
+}
+
+.t-box{
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 50px 0;
+}
+
+
+.t-con {
+    min-width: 100%;
+}
+
+.t-boxes svg {
+    width: 70px;
+    height: 70px;
+}
+
+.t-box.left{
+    width: calc(50% - 40px);
+    justify-content: flex-end;
+    text-align: right;
+}
+
+.t-box.right{
+    width: calc(50% - 40px);
+    margin-left: calc(50% + 40px);
+}
+
+.timeline-line{
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    width: 8px;
+    height: 100%;
+    border-radius: 10px;
+    background:#5a6cff;
+    box-shadow:
+    0 0 10px #5a6cff,
+    0 0 30px #5a6cff,
+    0 0 60px #5a6cff;
+}
+
+.dot{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    box-shadow: 0 0 15px #5a6cff;
+    background: #5a6cff;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.t-box.left .dot{
+    right: -50px;
+}
+
+.t-box.right .dot{
+    left: -50px;
+}
+
+
+/* timeline ends */
+
+.boxes {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.box {
+    margin: 1rem;
+    padding: 1rem;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 20px;
+}
+
+.count {
+    font-size: 30px;
+    font-weight: 800
+}
+
+
+
+
+/* participation starts */
+
+
+.why-participation {
+    margin: 1rem;
+}
+
+
+
+.p-boxes {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 1rem;
+    padding: .5rem;
+    text-align: center;
+    line-height: 30px;
+}
+
+.p-boxes .p-box {
+    margin: .5rem; 
+    border-radius: .5rem;
+    padding: .5rem;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 20px;
+}
+
+/* participation ends */
+
+
+/* footer starts */
+
+.footer {
+    background: black;
+    color: white;
+    padding: 1rem;
+
+}
+
+
+.footer a {
+    text-decoration: none;
+    color: white;
+}
+
+.footer h2 {
+    font-size: 20px;
+}
+
+
+.footer .social ul, .fo-items {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    line-height: 30px;
+}
+
+/* footer ends */
+

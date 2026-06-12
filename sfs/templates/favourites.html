@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Favorites || Ashok SFS {% endblock %}
+{% block css %} {% static "css/sidebar.css" %} {% endblock %}
+{% block extra_css %} {% static "css/favourites.css" %}{% endblock %}
+
+{% block navbar %}
+    {% include "sidebar.html" %}
+{% endblock %}
+
+{% block content %}
+
+    <div class="bread_crumb">
+        <p>&gt; <a href="{% url 'home' %}">
+            <svg  width="16" height="16" fill="currentColor" class="as as-house-door" viewBox="0 0 16 16">
+                <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4z"/>
+            </svg>
+        </a> &gt; <a href="{% url 'profile' %}">Profile</a> &gt; <a href="{% url 'favorites' %}">Favorites</a></p>
+    </div>
+
+    
+    {% if favorites == 0 %}
+
+    <div class="favourites_up">
+        
+        <svg width="16" height="16" fill="currentColor" class="as as-heart-fill" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
+        </svg>
+        <h1>No favourites yet</h1>
+        <p>Start exploring blueprints and tap the heart icon to save your favorites here.</p>
+    </div>
+
+    {% else %}
+
+    <style>
+        .blueprint .as-heart {
+            
+            left: -109px;
+        }
+    </style>
+    <div id="blueprint">
+
+        {% for blueprint in blueprints %}
+        <div class="blueprint">
+    
+            <img src="{{ img_url }}{{ blueprint.bp.image }}" alt="logo" class="blueprint_img" fetchpriority="high" align="center">
+            <br>
+            <svg width="16" height="16" fill="currentColor" class="as as-heart" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
+            </svg>
+            
+            <div class="bb">
+
+                <h2>{{ blueprint.bp.name }}</h2>
+                
+                <div class="categories">
+                    {% for category in categories %}
+                        <div class="category">
+                            <a href="{% url 'category' %}?category_id={{ category.category_id}}">{{ category.category.bp_name }}</a>
+                        </div>
+                    {% endfor %}
+                </div>
+
+
+                <div class="blue_down">
+                    <span>{{ blueprint.user.name }}</span>
+                    <div class="blue_down_icon">
+                        <svg width="16" height="16" fill="currentColor" class="as as-download" viewBox="0 0 16 16">
+                            <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                            <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+                        </svg>{{ blueprint.bp.fdownloads }}
+                    </div>
+                </div>
+
+
+                <button class="download_btn_h" onclick="window.location.href='{% url 'blueprint' %}?bp_id={{ blueprint.bp_id }}'">
+                    <svg width="16" height="16" fill="currentColor" class="as as-download" viewBox="0 0 16 16">
+                        <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                        <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+                    </svg>Download Now
+                </button>
+            </div>
+        </div>
+        {% endfor %}
+    
+    </div>
+
+
+    {% endif  %}
+
+{% endblock %}

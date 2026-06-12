@@ -1,0 +1,44 @@
+.settings, .account {
+    background-color: color-mix(in oklab, var(--purple-900) 80%, transparent);
+    border: 1px solid var(--purple-900);
+    margin: .5rem;
+    padding: .5rem;
+    width: 100%;
+    border-radius: .5rem;
+}
+
+.settings p, .account p {
+    color: var(--gray-400);
+    margin: .5rem 0 .5rem 0;
+}
+
+
+.upload_btn {
+    background-color: color-mix(in oklab, var(--purple-950) 100%, transparent);
+    border-radius: .5rem;
+    display: flex;
+    align-items: center;
+    padding: .5rem;
+    gap: 10px;
+    width: 100%;
+    color: white;
+}
+
+.uploads {
+    width: 100%;
+}
+
+.head_upload {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.content {
+    justify-content: center;
+}
+
+
+
+

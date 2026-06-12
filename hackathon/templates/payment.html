@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Complete your registration for Devnovate 2026 by making the payment. Secure, fast, and easy payment process to confirm your spot in the hackathon.">
+<meta name="keywords" content="Devnovate, Hackathon, Payment, Registration, Secure Payment, Razorpay">
+<title>Devnovate Payment || AScAIthon 2026</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="icon" href="https://cdn.ascentracoresolutions.com/favicon.ico" type="image/x-icon">
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:#f4f8fc;
+    color:#222;
+}
+
+/* HERO SECTION */
+
+.hero{
+    background:linear-gradient(135deg,#041c4d,#063b8a,#007bff);
+    color:white;
+    padding:70px 10%;
+}
+
+.hero h1{
+    font-size:48px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    font-size:18px;
+    opacity:.9;
+    max-width:700px;
+}
+
+/* CONTAINER */
+
+.container{
+    width:90%;
+    max-width:1300px;
+    margin:auto;
+    margin-top:-50px;
+    margin-bottom:50px;
+
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:25px;
+}
+
+/* PAYMENT CARD */
+
+.payment-card{
+    background:white;
+    border-radius:20px;
+    padding:35px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.card-title{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    color:#007bff;
+    font-size:26px;
+    font-weight:700;
+    margin-bottom:15px;
+}
+
+.sub-title{
+    color:#666;
+    margin-bottom:30px;
+}
+
+.form-group{
+    margin-bottom:20px;
+}
+
+label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:600;
+}
+
+input{
+    width:100%;
+    padding:15px;
+    border:1px solid #d7e5ff;
+    border-radius:10px;
+    font-size:15px;
+    outline:none;
+}
+
+input:focus{
+    border-color:#007bff;
+    box-shadow:0 0 0 4px rgba(0,123,255,.15);
+}
+
+.small-text{
+    margin-top:8px;
+    color:#777;
+    font-size:13px;
+}
+
+/* BUTTON */
+
+.pay-btn{
+    width:100%;
+    padding:18px;
+    border:none;
+    border-radius:12px;
+    font-size:18px;
+    font-weight:700;
+    color:white;
+    cursor:pointer;
+
+    background:linear-gradient(
+        90deg,
+        #007bff,
+        #00a8ff,
+        #00d4ff
+    );
+
+    transition:.3s;
+}
+
+.pay-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 10px 25px rgba(0,123,255,.35);
+}
+
+.secure{
+    text-align:center;
+    margin-top:15px;
+    color:#777;
+    font-size:14px;
+}
+
+/* SUMMARY */
+
+.summary-card{
+    background:white;
+    border-radius:20px;
+    padding:30px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    height:fit-content;
+}
+
+.summary-title{
+    color:#007bff;
+    font-size:24px;
+    font-weight:700;
+    margin-bottom:25px;
+}
+
+.item{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:20px;
+}
+
+.line{
+    height:1px;
+    background:#e5e5e5;
+    margin:20px 0;
+}
+
+.total{
+    display:flex;
+    justify-content:space-between;
+    font-size:24px;
+    font-weight:700;
+    color:#007bff;
+}
+
+.trust-box{
+    background:#eef7ff;
+    padding:18px;
+    border-radius:12px;
+    border-left:4px solid #007bff;
+    margin-top:25px;
+}
+
+.trust-box h4{
+    color:#007bff;
+    margin-bottom:8px;
+}
+
+.features{
+    margin-top:20px;
+}
+
+.features p{
+    margin:12px 0;
+    color:#444;
+}
+
+.features i{
+    color:#00b84d;
+    margin-right:10px;
+}
+
+/* FOOTER FEATURES */
+
+.footer-features{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+    margin-bottom:50px;
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+    text-align:center;
+}
+
+.feature-card{
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.05);
+}
+
+.feature-card i{
+    color:#007bff;
+    font-size:28px;
+    margin-bottom:10px;
+}
+
+.feature-card h4{
+    margin-bottom:5px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+    .container{
+        grid-template-columns:1fr;
+    }
+
+    .footer-features{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .hero h1{
+        font-size:34px;
+    }
+}
+
+@media(max-width:600px){
+
+    .footer-features{
+        grid-template-columns:1fr;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+
+<section class="hero">
+    <h1>Hackathon Registration Payment</h1>
+    <p>
+        Complete your registration by making the payment and
+        secure your spot in Devnovate 2026.
+    </p>
+
+
+</section>
+
+<!-- MAIN -->
+
+<div class="container">
+
+    <!-- LEFT -->
+
+    <div class="payment-card">
+
+        <div class="card-title">
+            <i class="fas fa-wallet"></i>
+            Payment Details
+        </div>
+
+        <p class="sub-title">
+            Please provide your registration details and proceed to payment.
+        </p>
+
+        <p>
+            Do you want to know your team name <a href="https://devnovate.co/event/ascaithon-2026">click here </a>to register. <br>
+            If you didn' t register Please <a href="https://devnovate.co/event/ascaithon-2026">register </a>
+        </p>
+
+        <div class="form-group">
+            <label>Email Address *</label>
+            <input type="email"name="email" id="email" placeholder="Enter your registered email">
+        </div>
+
+        <div class="form-group">
+            <label>Team Name *</label>
+            <input type="text" name="team_name" id="team" placeholder="Enter Team Name">
+        </div>
+
+        <button class="pay-btn" id="pay-btn">
+            <i class="fas fa-lock"></i>
+            Proceed to Pay ₹100
+        </button>
+
+        <div class="secure">
+            <i class="fas fa-shield-alt"></i>
+            Secure payments powered by Razorpay
+        </div>
+
+    </div>
+
+    <!-- RIGHT -->
+
+    <div class="summary-card">
+
+        <div class="summary-title">
+            Order Summary
+        </div>
+
+        <div class="item">
+            <span>Devnovate Registration Fee</span>
+            <strong>₹100</strong>
+        </div>
+
+        <div class="line"></div>
+
+        <div class="total">
+            <span>Total</span>
+            <span>₹100</span>
+        </div>
+
+        <div class="trust-box">
+            <h4>Secure & Safe</h4>
+            <p>Your payment information is encrypted and protected.</p>
+        </div>
+
+        <div class="features">
+            <p><i class="fas fa-check-circle"></i>100% Secure Payments</p>
+            <p><i class="fas fa-check-circle"></i>Instant Confirmation</p>
+            <p><i class="fas fa-check-circle"></i>24/7 Support</p>
+            <p><i class="fas fa-check-circle"></i>Razorpay Verified</p>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- FOOTER FEATURES -->
+
+<div class="footer-features">
+
+    <div class="feature-card">
+        <i class="fas fa-lock"></i>
+        <h4>Secure</h4>
+        <p>SSL Encrypted</p>
+    </div>
+
+    <div class="feature-card">
+        <i class="fas fa-shield-alt"></i>
+        <h4>Reliable</h4>
+        <p>Powered by Razorpay</p>
+    </div>
+
+    <div class="feature-card">
+        <i class="fas fa-bolt"></i>
+        <h4>Instant</h4>
+        <p>Quick Confirmation</p>
+    </div>
+
+    <div class="feature-card">
+        <i class="fas fa-headset"></i>
+        <h4>Support</h4>
+        <p>24/7 Assistance</p>
+    </div>
+
+</div>
+
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+<script>var options = {
+    key: "{{ razorpay_key }}",
+    amount: "10000",
+    currency: "INR",
+    order_id: "{{ order_id }}",
+
+    handler: function(response) {
+
+        let email = document.getElementById("email").value;
+        let team = document.getElementById("team").value;
+
+        fetch("/save-payment/", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                email: email,
+                team_name: team,
+                payment_id: response.razorpay_payment_id
+            })
+        })
+        .then(res => res.json())
+        .then(data => {
+            window.location.href =
+            "https://devnovate.co/event/ascaithon-2026/team-formation";
+        });
+
+    }
+};
+
+var rzp = new Razorpay(options);
+
+document.getElementById("pay-btn").onclick = function(e){
+
+    let email = document.getElementById("email").value;
+    let team = document.getElementById("team").value;
+
+    if(email === "" || team === ""){
+        alert("Please enter Email and Team Name");
+        return;
+    }
+
+    rzp.open();
+    e.preventDefault();
+};
+</script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+.container {
+    overflow-x: hidden;
+}
+h1, h2 {
+    text-align: center;
+}
+.home {
+    display: none;
+}
+.home.fill {
+    display: block;
+}
+.sidebar_icons.fill {
+    display: flex;
+}
+.sidebar~.container .blueprint_con {
+    width: calc(100vw - 250px);
+}
+p {
+    text-indent: 2rem;
+}
+.search_img {
+    width: 200px;
+    height: 100px;
+    border-radius: .3rem;
+}
+.blueprint_con {
+    width: 100vw;
+    display: flex;
+    overflow-x: auto;
+    align-items: center;
+    margin: 10px;
+    padding: 1rem;
+}
+.blueprint_btn {
+    width: 160px;
+    height: 35px;
+    background-color: skyblue;
+    border-radius: .5rem;
+    font-weight: 800;
+    cursor: pointer;
+}
+.sidebar.active~.blueprint {
+    width: 200px;
+}
+.blueprint {
+    margin: .5rem;
+    border-radius: .5rem;
+    border: 1px solid #000;
+    padding: .5rem;
+    width: 100vw;
+}
+
+
+h1 {
+    font-size: 22px
+}
+
+h2 {
+    width: 180px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow-x: hidden;
+}
+
+
+@media only screen and (min-width: 0px) and (max-width: 600px){
+    .container .content .blueprint_con {
+        width: 100vw;
+    }
+}
+
+@media only screen and (min-width: 0px) and (max-width: 900px) {
+    .container .blueprint_box {
+        margin-right: 5rem;
+    }
+}

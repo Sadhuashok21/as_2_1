@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %} Planets and worlds || Ashok SFS{% endblock %}
+{% block css %} {% static "css/sidebar.css" %} {% endblock %}
+
+{% block navbar %}
+    {% include "sidebar.html" %}
+{% endblock %}
+
+{% block content %}
+
+    <div class="bread_crumb">
+        <p> &gt; <a href="{% url 'home' %}">
+            <svg  width="16" height="16" fill="currentColor" class="as as-house-door" viewBox="0 0 16 16">
+                <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4z"/>
+            </svg>
+        </a> &gt; <a href="">Planets and worlds</a></p>
+    </div>
+
+    <br>
+
+    <div id="blueprint">
+
+        {% for blueprint in planetsandworlds %}
+        <div class="blueprint">
+    
+            <img src="{{ img_url }}{{blueprint.image }}" alt="logo" class="blueprint_img" fetchpriority="high" align="center">
+            <br>
+            <svg width="16" height="16" fill="currentColor" class="as as-heart" viewBox="0 0 16 16" onclick="like('{{blueprint.bp_id}}')">
+                <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
+            </svg>
+            <div class="bb">
+
+                <h2>{{ blueprint.name }}</h2>
+                
+
+
+                <div class="blue_down">
+                    <span>{{ blueprint.user.name }}</span>
+                    <div class="blue_down_icon">
+                        <svg width="16" height="16" fill="currentColor" class="as as-download" viewBox="0 0 16 16">
+                            <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                            <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+                        </svg>{{ blueprint.fdownloads }}
+                    </div>
+                </div>
+
+
+                <button class="download_btn_h" onclick="window.location.href='{% url 'blueprint' %}?bp_id={{ blueprint.bp_id }}'">
+                    <svg width="16" height="16" fill="currentColor" class="as as-download" viewBox="0 0 16 16">
+                        <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                        <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+                    </svg>Download Now
+                </button>
+            </div>
+        </div>
+        {% endfor %}
+    
+    </div>
+
+    {% include 'social_media.html' %}
+    <div class="pages">
+
+        {% if off > 1 %}
+            <a href="?off={{ back }}"><span class="page_no">Prev</span></a>
+        {% endif %}
+    
+        {% for page in all_pages %}
+            {% if page == '.' %}
+                <span class="page_no">.</span>
+            {% else %}
+                {% if page == off %}
+                    <a href="?off={{ page }}">
+                        <span class="page_no" style="font-weight:bold;background:aliceblue;">
+                            {{ page }}
+                        </span>
+                    </a>
+                {% else %}
+                    <a href="?off={{ page }}">
+                        <span class="page_no">
+                            {{ page }}
+                        </span>
+                    </a>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+    
+        {% if off < last_page %}
+            <a href="?off={{ next }}"><span class="page_no">Next</span></a>
+        {% endif %}
+    
+    </div>
+
+{% endblock %}
+

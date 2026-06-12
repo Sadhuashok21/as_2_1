@@ -1,0 +1,15 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "in.ashokworld.sfsblueprints",
+      "sha256_cert_fingerprints": [
+        "B9:55:BE:E4:50:32:D0:EF:FA:7E:1C:B1:6B:41:CE:C3:DA:1E:16:B8:FA:50:C3:DE:0B:CB:3A:5A:F2:B5:E2:20"
+      ]
+    }
+  }
+]

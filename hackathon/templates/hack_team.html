@@ -1,0 +1,46 @@
+
+
+{% extends "hack_base.html" %}
+
+{% block title %} Home {% endblock %}
+
+
+{% block sidebar %}
+    {% include "hack_sidebar.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+    {% include 'hack_con_sidebar.html' %}
+   
+
+
+    <h1>Team Management</h1>
+    <p>Build you own desired team! Or join a team which belongs to your mindset</p>
+
+     <div class="form_team">
+        <div class="team">
+            Create a team
+        </div>
+        <div class="team">
+            Join a team
+        </div>
+    </div>
+
+
+    <div class="team_det">
+
+        <form action="" method="POST">
+            <label for="name">Team Name <span>*</span></label>
+            <input type="text" name="name" id="name" placeholder="TeamX" required />
+
+            <input type="submit" value="Create Team"/>
+        </form>
+
+
+    </div>
+
+
+
+{% endblock %}

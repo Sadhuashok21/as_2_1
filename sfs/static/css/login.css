@@ -1,0 +1,95 @@
+.bread_crumb {
+    left: 172px;
+    top: 52px
+}
+
+.as.as-lock-fill {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--purple-601);
+    color: var(--cyan-400);
+        padding: 18px;
+    margin: 10px;
+
+    box-shadow:  1px 2px 18px 6px var(--purple-600);
+}
+
+.container {
+    text-align: center;
+}
+
+.content_inner {
+    max-width: 700px;
+    padding: 20px;
+    border-radius: .5rem;
+    padding: 20px;
+    margin: 10px;
+}
+
+
+.benefit {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px;
+    font-size: 15px;
+}
+
+
+.benefit .as {
+    color: var(--cyan-400);
+}
+
+h1 {
+    font-size: 30px;
+}
+
+h2 {
+    color: var(--cyan-400);
+}
+
+.benefits {
+    margin-top: 20px;
+    text-align: left;
+    
+    border: 1px solid var(--purple-601);
+    border-radius: .5rem;
+    padding: 20px;
+}
+
+p {
+    font-size: 16px;
+    opacity: 0.8;
+    text-align: center;
+    line-height: 25px;
+    text-indent: 3rem;
+}
+
+.btns {
+    display: grid;
+    justify-items: center;
+}
+
+.login-button {
+    background: linear-gradient(var(--cyan-400), var(--cyan-600));
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: .8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+
+@media only screen and (min-width: 0px) and (max-width: 600px) {
+    .bread_crumb {
+        left: -43px;
+        top: 52px
+    }
+}

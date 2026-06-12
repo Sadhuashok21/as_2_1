@@ -1,0 +1,13 @@
+.star {
+    color: red;
+}
+
+
+form {
+    border-radius: .5rem;
+
+    border: 1px solid black;
+    padding: .5rem;
+    background-color: rgb(65, 72, 72);
+    width: 400px;
+}

@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ascentracore Solutions | Contact</title>
+    <link rel="stylesheet" href="{% static 'css/errors.css' %}">
+    <link rel="icon" href="{% static 'images/ascentra.webp' %}">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G4CDC863PH"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-G4CDC863PH');
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="form">
+                <h2>Contact Us</h2>
+                <form action="contact" method="POST">
+                    <table>
+                        <tr>
+                            <td>
+                            <span class="icon">
+                                <svg  width="16" height="16" fill="currentColor" class="as as-person-circle" viewBox="0 0 16 16">
+                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                                </svg>
+                                <label for="name"><span class="icon_size">Name</span></label>
+                            </span>
+                            </td>
+                            <td>
+                            <input type="text" name="name"  id="name" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                            <span class="icon">
+                                <svg  width="16" height="16" fill="currentColor" class="as as-envelope-fill" viewBox="0 0 16 16">
+                                <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"/>
+                                </svg>
+                                <label for="email"><span class="icon_size">Email</span></label>
+                            </span>
+                            </td>
+                            <td><input type="email" name="email"  id="email" required></td>
+                        </tr>
+                        <tr>
+                            <td>
+                            <span class="icon">
+                                <svg  width="16" height="16" fill="currentColor" class="as as-envelope-fill" viewBox="0 0 16 16">
+                                <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"/>
+                                </svg>
+                            <label for="esub"><span class="icon_size">Subject</span></label>
+                            </span>
+                        </td>
+                            <td><input type="text" name="esubject" id="esub"  required></td>
+                        </tr>
+                        <tr>
+                            <td>
+                            <span class="icon">
+                                <svg width="16" height="16" fill="currentColor" class="as as-chat-left-text-fill" viewBox="0 0 16 16">
+                                    <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4.414a1 1 0 0 0-.707.293L.854 15.146A.5.5 0 0 1 0 14.793V2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5z"/>
+                                </svg>
+                                <label for="message"><span class="icon_size">Message</span></label>
+                            </span>
+                            </td>
+                            <td><textarea id="message" name="message" required></textarea></td>
+                        </tr>
+                        <tr>
+                            <td>
+                            <span class="icon">
+                                <svg  width="16" height="16" fill="currentColor" class="as as-envelope-fill" viewBox="0 0 16 16">
+                                <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"/>
+                                </svg>
+                                <span class="icon_size">Mail</span>
+                            </span>
+                            </td>
+                            <td><textarea readonly style="resize: none;">contact@ascentrasolutions.in</textarea></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><center><input type="submit" value="Send" class="submit"></center></td>
+                        </tr>
+                    </table>
+                </form>
+            
+            </div>
+        </div>
+    </div>
+</body>
+</html>

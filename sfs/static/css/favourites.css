@@ -1,0 +1,27 @@
+.container {
+    text-align: center;
+}
+
+.as-heart-fill {
+    fill: var(--purple-600);
+    border: 1px solid var(--purple-600);
+    padding: 1rem;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px
+}
+
+.favourites_up {
+
+    max-width: 350px;
+    line-height: 35px;
+}
+
+.content {
+    height: 70vh;
+}
+
+.favourites_up p {
+    color: var(--gray-400);
+}
+

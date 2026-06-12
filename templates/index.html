@@ -1,0 +1,407 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ascentra Solutions has connect the world in smart way like mailing network ascnote">
+    <title>Ascentracore Solutions</title>
+    <link rel="stylesheet" href="{% static 'css/index.css'%}">
+    <link rel="icon" href="{% static 'images/ascentra.webp' %}">
+    <link rel="preload" href="{% static 'css/index.css'%}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    </noscript>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8687126461256058"
+    crossorigin="anonymous"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8MCVQMZ9YB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-8MCVQMZ9YB');
+    </script>
+</head>
+<body>
+    
+    <div class="container">
+
+        <video autoplay loop muted plays-inline class="background-clip" kind="captions">
+            <source src="{% static 'images/asteras.mp4' %}" type="video/mp4">
+        </video>
+        <div class="all_con">
+          <div class="grid_sidebar">
+            
+            <div class="x_into">
+                <svg width="16" height="16" fill="currentColor" class="as as-x-lg" viewBox="0 0 16 16" >
+                  <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+                </svg>
+            </div>
+        
+            <ul class="upbar_lists_sidebar">
+                <li>
+                    <a href="./" title="home">HOME</a>
+                </li>
+                <li>
+                    <a href="#ascnote" title="ascnote">ASC NOTE</a>
+                </li>
+                <li>
+                    <a href="#skiltrix" title="Education">SKILTRIX</a>
+                </li>
+                <li>
+                    <a href="#sonicora" title="sonicora">SONICORA</a>
+                </li>
+                <li>
+                    <a href="{% url 'privacy:contact' %}" title="Contact">CONTACT US</a>
+                </li>
+                <li>
+                    <a href="{% url 'privacy:about' %}" title="About">ABOUT US</a>
+                </li>
+            </ul>
+
+            
+          </div>
+        
+            <div class="upbar">
+                <img src="{% static 'images/ascentra.webp' %}" alt="AS Logo" class="logo">
+                <div class="grid">
+                  <svg width="16" height="16" fill="currentColor" class="as as-list" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+                  </svg>
+                </div>
+                <ul class="upbar_lists">
+                    <li>
+                        <a href="./" title="home">HOME</a>
+                    </li>
+                    <li>
+                        <a href="#ascnote" title="ascnote">ASC NOTE</a>
+                    </li>
+                    <li>
+                        <a href="#skiltrix" title="Education">SKILTRIX</a>
+                    </li>
+                    <li>
+                        <a href="#sonicora" title="sonicora">SONICORA</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'privacy:contact' %}" title="Contact">CONTACT US</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'privacy:about' %}" title="About">ABOUT US</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="content">
+                <div class="info">
+                    <div class="aster">
+                        <h1>Ascentracore Solutions</h1>
+                        <h3>Connection of world with smarter way</h3>
+                        <br>
+                        <p>We offer best services for your connection of world or entertainment. We can also provide education for all courses.</p>
+                        <a href="{{ login }}" title="Create Account"><button class="signin_but">Create account</button></a>
+                        <a href="https://accounts.ascentracoresolutions.com/" title="Signin"><button class="signin_but">Signin</button></a>
+
+                        <div class="social">
+                            <h3>Follow us on</h3><br>
+                            {% include 'social_media.html' %}
+                        </div>
+                    </div>
+                <img src="{% static 'images/ascentra.webp' %}" class="as_logo" alt="logo">  
+                </div>
+    
+            </div>
+
+        </div>
+        <div class="second_section">
+            <h2>Our Services</h2>
+            <br>
+            <div class="boxes_con">
+                <div class="ascnote_box">
+                    <img src="{% static 'images/ascentra.webp' %}" class="ascnote_logo" alt="ascnote">
+                    <div class="ascnote_box_con">
+                        
+                        <center><h3>ASC Note</h3></center><br>
+                        <p>ASCNote sends mails unlimited without sender address.</p>
+                        <a href="#ascnote" title="ascnote">Read more →</a>
+                    </div>
+                </div>
+                <div class="sonicora_box">
+                    <img src="{% static 'images/coo.png' %}" class="ascnote_logo" alt="sonicora">
+                    <div class="sonicora_box_con">
+                        <center><h3>SonicOra</h3></center><br>
+                        <p>SonicOra offers music without premium</p>
+                        <a href="#sonicora">Read more →</a>
+                    </div>
+                </div>
+                <div class="skiltrix_box">
+                    <img src="{% static 'images/ascentra.webp' %}" class="ascnote_logo" alt="skiltrix">
+                    <div class="skiltrix_box_con">
+                        <center><h3>SkilTrix</h3></center><br>
+                        <p>SkilTrix offers all types of courses and mock tests.</p>
+                        <a href="#skiltrix" title="skiltrix">Read more →</a>
+                    </div>
+                </div>
+                <div class="ashok_sfs_box">
+                    <img src="{% static 'images/ashoksfs.webp'%}" class="ascnote_logo" alt="ashok sfs">
+                    <div class="ashok_sfs_box_con">
+                        <center><h3>Ashok SFS</h3></center><br>
+                        <p>SFS is the game. We are providing blueprints to the gamers.</p>
+                        <a href="#ashoksfs" title="Ashok SFS">Read more →</a>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="third_section" id="ascnote">
+            <h2>ASC Note</h2>
+
+            <div class="ascnote">
+                <img src="{% static 'images/ascentra.webp' %}" class="ascnote_lo" alt="ascnote">
+                <div class="ascnote_con">
+                    <p>ASC Note is one of the best service of mailing network. When we send mail to the receiver the receiver cann't see the sender address without sender permission.</p>
+                    <p class="ascnote_disp">ASC Note sends unlimited mails with very secure. ascnote cann't receive other mailing networking services but receive ascnote server mails.</p>
+                    <br>
+                    <p class="ascnote_disp">ASC Note can send the file above 35MB also. It can sends the unlimited files at same time.</p>
+                    <p class="ascnote_disp">ASC Note design the mail with AS Editor</p>
+                    <center>
+                        <h3>Download App</h3>
+                        <br><a href="https://play.google.com/store/apps/details?id=co.median.android.qjpzxd&pcampaignid=web_share" title="App Link">
+                        <svg width="122" height="36" viewBox="0 0 122 36" class="as as-google-play" style="cursor: pointer">
+                            <defs>
+                                <linearGradient x1="91.407%" y1="4.961%" x2="-38.353%" y2="71.942%" id="a">
+                                    <stop stop-color="#00A0FF" offset="0%"/>
+                                    <stop stop-color="#00A1FF" offset=".657%"/>
+                                    <stop stop-color="#00BEFF" offset="26.01%"/>
+                                    <stop stop-color="#00D2FF" offset="51.22%"/>
+                                    <stop stop-color="#00DFFF" offset="76.04%"/>
+                                    <stop stop-color="#00E3FF" offset="100%"/>
+                                </linearGradient>
+                                <linearGradient x1="107.61%" y1="50.017%" x2="-130.522%" y2="50.017%" id="b">
+                                    <stop stop-color="#FFE000" offset="0%"/>
+                                    <stop stop-color="#FFBD00" offset="40.87%"/>
+                                    <stop stop-color="#FFA500" offset="77.54%"/>
+                                    <stop stop-color="#FF9C00" offset="100%"/>
+                                </linearGradient>
+                                <linearGradient x1="86.247%" y1="17.849%" x2="-50.121%" y2="194.763%" id="c">
+                                    <stop stop-color="#FF3A44" offset="0%"/>
+                                    <stop stop-color="#C31162" offset="100%"/>
+                                </linearGradient>
+                                <linearGradient x1="-18.79%" y1="-54.184%" x2="42.103%" y2="24.858%" id="d">
+                                    <stop stop-color="#32A071" offset="0%"/>
+                                    <stop stop-color="#2DA771" offset="6.85%"/>
+                                    <stop stop-color="#15CF74" offset="47.62%"/>
+                                    <stop stop-color="#06E775" offset="80.09%"/>
+                                    <stop stop-color="#00F076" offset="100%"/>
+                                </linearGradient>
+                            </defs>
+                            <g fill="none" fill-rule="evenodd">
+                                <path d="M117.48 36H4.52C2.03 36 0 33.97 0 31.5v-27C0 2.02 2.03 0 4.52 0h112.96c2.49 0 4.52 2.02 4.52 4.5v27c0 2.47-2.03 4.5-4.52 4.5z" fill="#000"/>
+                                <path d="M117.48.72c2.09 0 3.8 1.7 3.8 3.78v27c0 2.08-1.7 3.78-3.8 3.78H4.52c-2.09 0-3.8-1.7-3.8-3.78v-27c0-2.08 1.7-3.78 3.8-3.78h112.96zm0-.72H4.52C2.03 0 0 2.03 0 4.5v27C0 33.98 2.03 36 4.52 36h112.96c2.49 0 4.52-2.02 4.52-4.5v-27c0-2.47-2.03-4.5-4.52-4.5z" fill="#A6A6A6"/>
+                                <path d="M42.68 9.22c0 .75-.22 1.35-.67 1.8-.51.53-1.17.8-1.98.8-.78 0-1.44-.27-1.99-.81S37.22 9.8 37.22 9c0-.8.27-1.47.82-2.01.54-.54 1.21-.81 1.99-.81.39 0 .76.08 1.11.23.35.15.63.35.84.6l-.48.47c-.36-.43-.85-.64-1.48-.64-.57 0-1.06.2-1.47.6-.41.4-.62.92-.62 1.56s.21 1.16.62 1.56c.41.4.91.6 1.47.6.6 0 1.11-.2 1.51-.6.26-.26.41-.63.45-1.09h-1.96v-.66h2.62c.02.14.04.28.04.41zm4.14-2.26h-2.46v1.71h2.22v.65h-2.22v1.71h2.46v.66h-3.15V6.3h3.15zm2.93 4.74h-.69V6.96h-1.51V6.3h3.71v.66h-1.51v4.74zm4.19 0V6.3h.69v5.4zm3.78 0h-.69V6.96h-1.51V6.3h3.71v.66h-1.51v4.74zm8.53-.7c-.53.55-1.19.82-1.98.82s-1.45-.27-1.98-.82a2.77 2.77 0 0 1-.8-2c0-.79.26-1.46.8-2 .53-.55 1.19-.82 1.98-.82.78 0 1.44.27 1.98.82.53.55.8 1.21.8 2-.01.79-.27 1.46-.8 2zm-3.45-.45c.4.4.89.61 1.47.61s1.07-.2 1.47-.61c.4-.4.6-.92.6-1.55s-.2-1.15-.6-1.55c-.4-.4-.89-.61-1.47-.61s-1.07.2-1.47.61c-.4.4-.6.92-.6 1.55s.2 1.15.6 1.55zm5.22 1.15V6.3h.84l2.62 4.2h.03l-.03-1.04V6.3h.69v5.4h-.72L68.7 7.3h-.03l.03 1.04v3.36z" stroke="#FFF" stroke-width=".18" fill="#FFF"/>
+                                <path d="M61.32 19.58c-2.12 0-3.84 1.61-3.84 3.83 0 2.2 1.73 3.83 3.84 3.83 2.12 0 3.84-1.62 3.84-3.83 0-2.22-1.72-3.83-3.84-3.83zm0 6.14c-1.16 0-2.16-.96-2.16-2.32 0-1.38 1-2.32 2.16-2.32 1.16 0 2.16.94 2.16 2.32 0 1.37-1 2.32-2.16 2.32zm-8.38-6.14c-2.12 0-3.84 1.61-3.84 3.83 0 2.2 1.73 3.83 3.84 3.83 2.12 0 3.84-1.62 3.84-3.83 0-2.22-1.72-3.83-3.84-3.83zm0 6.14c-1.16 0-2.16-.96-2.16-2.32 0-1.38 1-2.32 2.16-2.32 1.16 0 2.16.94 2.16 2.32 0 1.37-1 2.32-2.16 2.32zm-9.97-4.97v1.62h3.89c-.12.91-.42 1.58-.88 2.04-.57.57-1.45 1.19-3 1.19-2.39 0-4.26-1.93-4.26-4.32 0-2.39 1.87-4.32 4.26-4.32 1.29 0 2.23.51 2.93 1.16l1.15-1.15c-.97-.93-2.26-1.64-4.07-1.64-3.28 0-6.03 2.67-6.03 5.94 0 3.28 2.75 5.94 6.03 5.94 1.77 0 3.1-.58 4.15-1.67 1.07-1.07 1.41-2.58 1.41-3.8 0-.38-.03-.72-.09-1.01h-5.49v.02zm40.78 1.26c-.32-.86-1.29-2.44-3.28-2.44-1.97 0-3.61 1.55-3.61 3.83 0 2.15 1.62 3.83 3.8 3.83 1.75 0 2.77-1.07 3.19-1.7l-1.3-.87c-.43.64-1.03 1.06-1.88 1.06-.86 0-1.46-.39-1.86-1.16l5.12-2.12-.18-.43zm-5.22 1.28c-.04-1.48 1.15-2.23 2-2.23.67 0 1.23.33 1.42.81l-3.42 1.42zM74.37 27h1.68V15.75h-1.68V27zm-2.76-6.57h-.06c-.38-.45-1.1-.86-2.02-.86-1.91 0-3.67 1.68-3.67 3.84 0 2.15 1.75 3.81 3.67 3.81.91 0 1.64-.41 2.02-.87h.06v.55c0 1.46-.78 2.25-2.04 2.25-1.03 0-1.67-.74-1.93-1.36l-1.46.61c.42 1.01 1.54 2.26 3.39 2.26 1.97 0 3.64-1.16 3.64-3.99V19.8h-1.59v.63h-.01zm-1.93 5.29c-1.16 0-2.13-.97-2.13-2.31 0-1.35.97-2.33 2.13-2.33 1.15 0 2.04.99 2.04 2.33.01 1.34-.89 2.31-2.04 2.31zm21.94-9.97H87.6V27h1.68v-4.26h2.34c1.86 0 3.69-1.35 3.69-3.49s-1.82-3.5-3.69-3.5zm.05 5.42h-2.39v-3.86h2.39c1.26 0 1.97 1.04 1.97 1.93 0 .88-.72 1.93-1.97 1.93zm10.38-1.61c-1.22 0-2.48.54-3 1.72l1.49.62c.32-.62.91-.83 1.53-.83.87 0 1.75.52 1.77 1.45v.12c-.3-.17-.96-.43-1.75-.43-1.61 0-3.24.88-3.24 2.53 0 1.51 1.32 2.48 2.79 2.48 1.13 0 1.75-.51 2.14-1.1h.06v.87h1.62v-4.31c0-2.01-1.49-3.12-3.41-3.12zm-.21 6.16c-.55 0-1.32-.27-1.32-.96 0-.87.96-1.2 1.78-1.2.74 0 1.09.16 1.53.38a2.022 2.022 0 0 1-1.99 1.78zm9.53-5.92l-1.93 4.88h-.06l-2-4.88h-1.81l3 6.82-1.71 3.79h1.75l4.62-10.61h-1.86zM96.24 27h1.68V15.75h-1.68V27z" fill="#FFF"/><path d="M1.39.78c-.26.28-.41.71-.41 1.27v19.9c0 .56.15.99.42 1.26l.07.06 11.15-11.15v-.25L1.46.72l-.07.06z" fill="url(#a)" transform="translate(8 6)"/>
+                                <path d="M16.33 15.85l-3.72-3.72v-.26l3.72-3.72.08.05 4.4 2.5c1.26.71 1.26 1.88 0 2.6l-4.4 2.5-.08.05z" fill="url(#b)" transform="translate(8 6)"/>
+                                <path d="M16.41 15.8l-3.8-3.8L1.39 23.22c.41.44 1.1.49 1.87.06l13.15-7.48" fill="url(#c)" transform="translate(8 6)"/>
+                                <path d="M16.41 8.2L3.26.73C2.49.29 1.8.35 1.39.79L12.61 12l3.8-3.8z" fill="url(#d)" transform="translate(8 6)"/>
+                                <path d="M24.33 21.72l-13.06 7.42c-.73.42-1.38.39-1.8.01l-.07.07.07.06c.42.38 1.07.41 1.8-.01l13.15-7.47-.09-.08z" opacity=".2" fill="#000"/>
+                                <path d="M28.81 19.17l-4.49 2.55.08.08 4.4-2.5c.63-.36.94-.83.94-1.3-.04.43-.36.84-.93 1.17z" fill="#000" opacity=".12"/>
+                                <path d="M11.26 6.86l17.55 9.97c.57.32.89.74.94 1.17 0-.47-.31-.94-.94-1.3L11.26 6.73C10 6.01 8.98 6.61 8.98 8.05v.13c0-1.44 1.02-2.03 2.28-1.32z" fill="#FFF" opacity=".25"/>
+                            </g>
+                        </svg>
+                    </a></center>
+                    <a href="{{ login }}" title="Signup"><button class="ascnote_but">Signup</button></a>
+                    <a href="{{ login }}" title="ascnote"><button class="ascnote_but">Read More</button></a>
+                </div>
+            </div>
+
+            
+        </div>
+
+        <div class="fourth_section" id="sonicora">
+            <h2>SonicOra</h2>
+
+            <div class="sonicora">
+
+                <div class="sonicora_con">
+                    <p>SonicOra offers music without premium. SonicOra can help user to upload their own song with music and copyright claims of user.</p>
+                    <br>
+                    <p class="sonicora_disp">SonicOra offers all music types like love, sad, happy, breakup, devotional, artist songs etc...</p>
+
+                    <p class="sonicora_disp">A user can save their favourite songs and albums. User can like the song.</p>
+                    <br><center>
+                        <h3>Download App</h3>
+                        <br><a href="https://play.google.com/store/apps/details?id=co.median.android.bbkzop">
+                        <svg width="122" height="36" viewBox="0 0 122 36" class="as as-google-play" style="cursor: pointer">
+                            <defs>
+                                <linearGradient x1="91.407%" y1="4.961%" x2="-38.353%" y2="71.942%" id="a">
+                                    <stop stop-color="#00A0FF" offset="0%"/>
+                                    <stop stop-color="#00A1FF" offset=".657%"/>
+                                    <stop stop-color="#00BEFF" offset="26.01%"/>
+                                    <stop stop-color="#00D2FF" offset="51.22%"/>
+                                    <stop stop-color="#00DFFF" offset="76.04%"/>
+                                    <stop stop-color="#00E3FF" offset="100%"/>
+                                </linearGradient>
+                                <linearGradient x1="107.61%" y1="50.017%" x2="-130.522%" y2="50.017%" id="b">
+                                    <stop stop-color="#FFE000" offset="0%"/>
+                                    <stop stop-color="#FFBD00" offset="40.87%"/>
+                                    <stop stop-color="#FFA500" offset="77.54%"/>
+                                    <stop stop-color="#FF9C00" offset="100%"/>
+                                </linearGradient>
+                                <linearGradient x1="86.247%" y1="17.849%" x2="-50.121%" y2="194.763%" id="c">
+                                    <stop stop-color="#FF3A44" offset="0%"/>
+                                    <stop stop-color="#C31162" offset="100%"/>
+                                </linearGradient>
+                                <linearGradient x1="-18.79%" y1="-54.184%" x2="42.103%" y2="24.858%" id="d">
+                                    <stop stop-color="#32A071" offset="0%"/>
+                                    <stop stop-color="#2DA771" offset="6.85%"/>
+                                    <stop stop-color="#15CF74" offset="47.62%"/>
+                                    <stop stop-color="#06E775" offset="80.09%"/>
+                                    <stop stop-color="#00F076" offset="100%"/>
+                                </linearGradient>
+                            </defs>
+                            <g fill="none" fill-rule="evenodd">
+                                <path d="M117.48 36H4.52C2.03 36 0 33.97 0 31.5v-27C0 2.02 2.03 0 4.52 0h112.96c2.49 0 4.52 2.02 4.52 4.5v27c0 2.47-2.03 4.5-4.52 4.5z" fill="#000"/>
+                                <path d="M117.48.72c2.09 0 3.8 1.7 3.8 3.78v27c0 2.08-1.7 3.78-3.8 3.78H4.52c-2.09 0-3.8-1.7-3.8-3.78v-27c0-2.08 1.7-3.78 3.8-3.78h112.96zm0-.72H4.52C2.03 0 0 2.03 0 4.5v27C0 33.98 2.03 36 4.52 36h112.96c2.49 0 4.52-2.02 4.52-4.5v-27c0-2.47-2.03-4.5-4.52-4.5z" fill="#A6A6A6"/>
+                                <path d="M42.68 9.22c0 .75-.22 1.35-.67 1.8-.51.53-1.17.8-1.98.8-.78 0-1.44-.27-1.99-.81S37.22 9.8 37.22 9c0-.8.27-1.47.82-2.01.54-.54 1.21-.81 1.99-.81.39 0 .76.08 1.11.23.35.15.63.35.84.6l-.48.47c-.36-.43-.85-.64-1.48-.64-.57 0-1.06.2-1.47.6-.41.4-.62.92-.62 1.56s.21 1.16.62 1.56c.41.4.91.6 1.47.6.6 0 1.11-.2 1.51-.6.26-.26.41-.63.45-1.09h-1.96v-.66h2.62c.02.14.04.28.04.41zm4.14-2.26h-2.46v1.71h2.22v.65h-2.22v1.71h2.46v.66h-3.15V6.3h3.15zm2.93 4.74h-.69V6.96h-1.51V6.3h3.71v.66h-1.51v4.74zm4.19 0V6.3h.69v5.4zm3.78 0h-.69V6.96h-1.51V6.3h3.71v.66h-1.51v4.74zm8.53-.7c-.53.55-1.19.82-1.98.82s-1.45-.27-1.98-.82a2.77 2.77 0 0 1-.8-2c0-.79.26-1.46.8-2 .53-.55 1.19-.82 1.98-.82.78 0 1.44.27 1.98.82.53.55.8 1.21.8 2-.01.79-.27 1.46-.8 2zm-3.45-.45c.4.4.89.61 1.47.61s1.07-.2 1.47-.61c.4-.4.6-.92.6-1.55s-.2-1.15-.6-1.55c-.4-.4-.89-.61-1.47-.61s-1.07.2-1.47.61c-.4.4-.6.92-.6 1.55s.2 1.15.6 1.55zm5.22 1.15V6.3h.84l2.62 4.2h.03l-.03-1.04V6.3h.69v5.4h-.72L68.7 7.3h-.03l.03 1.04v3.36z" stroke="#FFF" stroke-width=".18" fill="#FFF"/>
+                                <path d="M61.32 19.58c-2.12 0-3.84 1.61-3.84 3.83 0 2.2 1.73 3.83 3.84 3.83 2.12 0 3.84-1.62 3.84-3.83 0-2.22-1.72-3.83-3.84-3.83zm0 6.14c-1.16 0-2.16-.96-2.16-2.32 0-1.38 1-2.32 2.16-2.32 1.16 0 2.16.94 2.16 2.32 0 1.37-1 2.32-2.16 2.32zm-8.38-6.14c-2.12 0-3.84 1.61-3.84 3.83 0 2.2 1.73 3.83 3.84 3.83 2.12 0 3.84-1.62 3.84-3.83 0-2.22-1.72-3.83-3.84-3.83zm0 6.14c-1.16 0-2.16-.96-2.16-2.32 0-1.38 1-2.32 2.16-2.32 1.16 0 2.16.94 2.16 2.32 0 1.37-1 2.32-2.16 2.32zm-9.97-4.97v1.62h3.89c-.12.91-.42 1.58-.88 2.04-.57.57-1.45 1.19-3 1.19-2.39 0-4.26-1.93-4.26-4.32 0-2.39 1.87-4.32 4.26-4.32 1.29 0 2.23.51 2.93 1.16l1.15-1.15c-.97-.93-2.26-1.64-4.07-1.64-3.28 0-6.03 2.67-6.03 5.94 0 3.28 2.75 5.94 6.03 5.94 1.77 0 3.1-.58 4.15-1.67 1.07-1.07 1.41-2.58 1.41-3.8 0-.38-.03-.72-.09-1.01h-5.49v.02zm40.78 1.26c-.32-.86-1.29-2.44-3.28-2.44-1.97 0-3.61 1.55-3.61 3.83 0 2.15 1.62 3.83 3.8 3.83 1.75 0 2.77-1.07 3.19-1.7l-1.3-.87c-.43.64-1.03 1.06-1.88 1.06-.86 0-1.46-.39-1.86-1.16l5.12-2.12-.18-.43zm-5.22 1.28c-.04-1.48 1.15-2.23 2-2.23.67 0 1.23.33 1.42.81l-3.42 1.42zM74.37 27h1.68V15.75h-1.68V27zm-2.76-6.57h-.06c-.38-.45-1.1-.86-2.02-.86-1.91 0-3.67 1.68-3.67 3.84 0 2.15 1.75 3.81 3.67 3.81.91 0 1.64-.41 2.02-.87h.06v.55c0 1.46-.78 2.25-2.04 2.25-1.03 0-1.67-.74-1.93-1.36l-1.46.61c.42 1.01 1.54 2.26 3.39 2.26 1.97 0 3.64-1.16 3.64-3.99V19.8h-1.59v.63h-.01zm-1.93 5.29c-1.16 0-2.13-.97-2.13-2.31 0-1.35.97-2.33 2.13-2.33 1.15 0 2.04.99 2.04 2.33.01 1.34-.89 2.31-2.04 2.31zm21.94-9.97H87.6V27h1.68v-4.26h2.34c1.86 0 3.69-1.35 3.69-3.49s-1.82-3.5-3.69-3.5zm.05 5.42h-2.39v-3.86h2.39c1.26 0 1.97 1.04 1.97 1.93 0 .88-.72 1.93-1.97 1.93zm10.38-1.61c-1.22 0-2.48.54-3 1.72l1.49.62c.32-.62.91-.83 1.53-.83.87 0 1.75.52 1.77 1.45v.12c-.3-.17-.96-.43-1.75-.43-1.61 0-3.24.88-3.24 2.53 0 1.51 1.32 2.48 2.79 2.48 1.13 0 1.75-.51 2.14-1.1h.06v.87h1.62v-4.31c0-2.01-1.49-3.12-3.41-3.12zm-.21 6.16c-.55 0-1.32-.27-1.32-.96 0-.87.96-1.2 1.78-1.2.74 0 1.09.16 1.53.38a2.022 2.022 0 0 1-1.99 1.78zm9.53-5.92l-1.93 4.88h-.06l-2-4.88h-1.81l3 6.82-1.71 3.79h1.75l4.62-10.61h-1.86zM96.24 27h1.68V15.75h-1.68V27z" fill="#FFF"/><path d="M1.39.78c-.26.28-.41.71-.41 1.27v19.9c0 .56.15.99.42 1.26l.07.06 11.15-11.15v-.25L1.46.72l-.07.06z" fill="url(#a)" transform="translate(8 6)"/>
+                                <path d="M16.33 15.85l-3.72-3.72v-.26l3.72-3.72.08.05 4.4 2.5c1.26.71 1.26 1.88 0 2.6l-4.4 2.5-.08.05z" fill="url(#b)" transform="translate(8 6)"/>
+                                <path d="M16.41 15.8l-3.8-3.8L1.39 23.22c.41.44 1.1.49 1.87.06l13.15-7.48" fill="url(#c)" transform="translate(8 6)"/>
+                                <path d="M16.41 8.2L3.26.73C2.49.29 1.8.35 1.39.79L12.61 12l3.8-3.8z" fill="url(#d)" transform="translate(8 6)"/>
+                                <path d="M24.33 21.72l-13.06 7.42c-.73.42-1.38.39-1.8.01l-.07.07.07.06c.42.38 1.07.41 1.8-.01l13.15-7.47-.09-.08z" opacity=".2" fill="#000"/>
+                                <path d="M28.81 19.17l-4.49 2.55.08.08 4.4-2.5c.63-.36.94-.83.94-1.3-.04.43-.36.84-.93 1.17z" fill="#000" opacity=".12"/>
+                                <path d="M11.26 6.86l17.55 9.97c.57.32.89.74.94 1.17 0-.47-.31-.94-.94-1.3L11.26 6.73C10 6.01 8.98 6.61 8.98 8.05v.13c0-1.44 1.02-2.03 2.28-1.32z" fill="#FFF" opacity=".25"/>
+                            </g>
+                        </svg>
+                    </a></center>
+                    <a href="{{ login }}" title="Listen Music"><button class="sonicora_but">Listen Music</button></a>
+                    <a href="{{ login }}" title="Upload Music"><button class="sonicora_but">Upload Music</button></a>
+                </div>
+                <img src="{% static 'images/coo.png'%}" class="sonicora_lo" alt="sonicora">
+            </div>
+        </div>
+
+        <div class="fifth_section" id="skiltrix">
+            <h2>SkilTrix</h2>
+            <div class="skiltrix">
+                <img src="{% static 'images/ascentra.webp' %}" class="skiltrix_lo" alt="skiltrix">
+                <div class="skiltrix_con">
+                    <p>SkilTrix offers all types of courses with more examples. A user can ask any queries in the comment section. </p>
+                    <p class="skiltrix_disp">Mock tests are also available for all cet exams. Cet exams are also available in test mode and timer mode of reality exam.</p>
+                    <p class="skiltrix_disp">Our courses are not only Programming languages but also Theory subjects. And also circuit explanation. All type of service is available in skiltrix.</p>
+                    <a href="{{ login }}" title="Courses"><button class="skiltrix_but">Courses</button></a>
+                    <a href="{{ login }}" title="skiltrix"><button class="skiltrix_but">Read More</button></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="sixth_section">
+            <h2>Ashok SFS</h2>
+            <div class="ashoksfs">
+                <div class="ashoksfs_con">
+                    <p>Spaceflight Simulator is the acronym of SFS. It is the space related game. We are providing blueprints and planets and worlds for gamers.</p>
+                    <p class="sfs_disp">A gamer can also upload their own blueprint and planet and world also. </p>
+                    <br>
+                    <center><div>
+
+                        <a href="https://play.google.com/store/apps/details?id=in.ashokworld.sfsblueprints" target="blank">
+                            <svg width="122" height="36" viewBox="0 0 122 36" class="as as-google-play" style="cursor: pointer">
+                                <defs>
+                                    <linearGradient x1="91.407%" y1="4.961%" x2="-38.353%" y2="71.942%" id="a">
+                                        <stop stop-color="#00A0FF" offset="0%"/>
+                                        <stop stop-color="#00A1FF" offset=".657%"/>
+                                        <stop stop-color="#00BEFF" offset="26.01%"/>
+                                        <stop stop-color="#00D2FF" offset="51.22%"/>
+                                        <stop stop-color="#00DFFF" offset="76.04%"/>
+                                        <stop stop-color="#00E3FF" offset="100%"/>
+                                    </linearGradient>
+                                    <linearGradient x1="107.61%" y1="50.017%" x2="-130.522%" y2="50.017%" id="b">
+                                        <stop stop-color="#FFE000" offset="0%"/>
+                                        <stop stop-color="#FFBD00" offset="40.87%"/>
+                                        <stop stop-color="#FFA500" offset="77.54%"/>
+                                        <stop stop-color="#FF9C00" offset="100%"/>
+                                    </linearGradient>
+                                    <linearGradient x1="86.247%" y1="17.849%" x2="-50.121%" y2="194.763%" id="c">
+                                        <stop stop-color="#FF3A44" offset="0%"/>
+                                        <stop stop-color="#C31162" offset="100%"/>
+                                    </linearGradient>
+                                    <linearGradient x1="-18.79%" y1="-54.184%" x2="42.103%" y2="24.858%" id="d">
+                                        <stop stop-color="#32A071" offset="0%"/>
+                                        <stop stop-color="#2DA771" offset="6.85%"/>
+                                        <stop stop-color="#15CF74" offset="47.62%"/>
+                                        <stop stop-color="#06E775" offset="80.09%"/>
+                                        <stop stop-color="#00F076" offset="100%"/>
+                                    </linearGradient>
+                                </defs>
+                                <g fill="none" fill-rule="evenodd">
+                                    <path d="M117.48 36H4.52C2.03 36 0 33.97 0 31.5v-27C0 2.02 2.03 0 4.52 0h112.96c2.49 0 4.52 2.02 4.52 4.5v27c0 2.47-2.03 4.5-4.52 4.5z" fill="#000"/>
+                                    <path d="M117.48.72c2.09 0 3.8 1.7 3.8 3.78v27c0 2.08-1.7 3.78-3.8 3.78H4.52c-2.09 0-3.8-1.7-3.8-3.78v-27c0-2.08 1.7-3.78 3.8-3.78h112.96zm0-.72H4.52C2.03 0 0 2.03 0 4.5v27C0 33.98 2.03 36 4.52 36h112.96c2.49 0 4.52-2.02 4.52-4.5v-27c0-2.47-2.03-4.5-4.52-4.5z" fill="#A6A6A6"/>
+                                    <path d="M42.68 9.22c0 .75-.22 1.35-.67 1.8-.51.53-1.17.8-1.98.8-.78 0-1.44-.27-1.99-.81S37.22 9.8 37.22 9c0-.8.27-1.47.82-2.01.54-.54 1.21-.81 1.99-.81.39 0 .76.08 1.11.23.35.15.63.35.84.6l-.48.47c-.36-.43-.85-.64-1.48-.64-.57 0-1.06.2-1.47.6-.41.4-.62.92-.62 1.56s.21 1.16.62 1.56c.41.4.91.6 1.47.6.6 0 1.11-.2 1.51-.6.26-.26.41-.63.45-1.09h-1.96v-.66h2.62c.02.14.04.28.04.41zm4.14-2.26h-2.46v1.71h2.22v.65h-2.22v1.71h2.46v.66h-3.15V6.3h3.15zm2.93 4.74h-.69V6.96h-1.51V6.3h3.71v.66h-1.51v4.74zm4.19 0V6.3h.69v5.4zm3.78 0h-.69V6.96h-1.51V6.3h3.71v.66h-1.51v4.74zm8.53-.7c-.53.55-1.19.82-1.98.82s-1.45-.27-1.98-.82a2.77 2.77 0 0 1-.8-2c0-.79.26-1.46.8-2 .53-.55 1.19-.82 1.98-.82.78 0 1.44.27 1.98.82.53.55.8 1.21.8 2-.01.79-.27 1.46-.8 2zm-3.45-.45c.4.4.89.61 1.47.61s1.07-.2 1.47-.61c.4-.4.6-.92.6-1.55s-.2-1.15-.6-1.55c-.4-.4-.89-.61-1.47-.61s-1.07.2-1.47.61c-.4.4-.6.92-.6 1.55s.2 1.15.6 1.55zm5.22 1.15V6.3h.84l2.62 4.2h.03l-.03-1.04V6.3h.69v5.4h-.72L68.7 7.3h-.03l.03 1.04v3.36z" stroke="#FFF" stroke-width=".18" fill="#FFF"/>
+                                    <path d="M61.32 19.58c-2.12 0-3.84 1.61-3.84 3.83 0 2.2 1.73 3.83 3.84 3.83 2.12 0 3.84-1.62 3.84-3.83 0-2.22-1.72-3.83-3.84-3.83zm0 6.14c-1.16 0-2.16-.96-2.16-2.32 0-1.38 1-2.32 2.16-2.32 1.16 0 2.16.94 2.16 2.32 0 1.37-1 2.32-2.16 2.32zm-8.38-6.14c-2.12 0-3.84 1.61-3.84 3.83 0 2.2 1.73 3.83 3.84 3.83 2.12 0 3.84-1.62 3.84-3.83 0-2.22-1.72-3.83-3.84-3.83zm0 6.14c-1.16 0-2.16-.96-2.16-2.32 0-1.38 1-2.32 2.16-2.32 1.16 0 2.16.94 2.16 2.32 0 1.37-1 2.32-2.16 2.32zm-9.97-4.97v1.62h3.89c-.12.91-.42 1.58-.88 2.04-.57.57-1.45 1.19-3 1.19-2.39 0-4.26-1.93-4.26-4.32 0-2.39 1.87-4.32 4.26-4.32 1.29 0 2.23.51 2.93 1.16l1.15-1.15c-.97-.93-2.26-1.64-4.07-1.64-3.28 0-6.03 2.67-6.03 5.94 0 3.28 2.75 5.94 6.03 5.94 1.77 0 3.1-.58 4.15-1.67 1.07-1.07 1.41-2.58 1.41-3.8 0-.38-.03-.72-.09-1.01h-5.49v.02zm40.78 1.26c-.32-.86-1.29-2.44-3.28-2.44-1.97 0-3.61 1.55-3.61 3.83 0 2.15 1.62 3.83 3.8 3.83 1.75 0 2.77-1.07 3.19-1.7l-1.3-.87c-.43.64-1.03 1.06-1.88 1.06-.86 0-1.46-.39-1.86-1.16l5.12-2.12-.18-.43zm-5.22 1.28c-.04-1.48 1.15-2.23 2-2.23.67 0 1.23.33 1.42.81l-3.42 1.42zM74.37 27h1.68V15.75h-1.68V27zm-2.76-6.57h-.06c-.38-.45-1.1-.86-2.02-.86-1.91 0-3.67 1.68-3.67 3.84 0 2.15 1.75 3.81 3.67 3.81.91 0 1.64-.41 2.02-.87h.06v.55c0 1.46-.78 2.25-2.04 2.25-1.03 0-1.67-.74-1.93-1.36l-1.46.61c.42 1.01 1.54 2.26 3.39 2.26 1.97 0 3.64-1.16 3.64-3.99V19.8h-1.59v.63h-.01zm-1.93 5.29c-1.16 0-2.13-.97-2.13-2.31 0-1.35.97-2.33 2.13-2.33 1.15 0 2.04.99 2.04 2.33.01 1.34-.89 2.31-2.04 2.31zm21.94-9.97H87.6V27h1.68v-4.26h2.34c1.86 0 3.69-1.35 3.69-3.49s-1.82-3.5-3.69-3.5zm.05 5.42h-2.39v-3.86h2.39c1.26 0 1.97 1.04 1.97 1.93 0 .88-.72 1.93-1.97 1.93zm10.38-1.61c-1.22 0-2.48.54-3 1.72l1.49.62c.32-.62.91-.83 1.53-.83.87 0 1.75.52 1.77 1.45v.12c-.3-.17-.96-.43-1.75-.43-1.61 0-3.24.88-3.24 2.53 0 1.51 1.32 2.48 2.79 2.48 1.13 0 1.75-.51 2.14-1.1h.06v.87h1.62v-4.31c0-2.01-1.49-3.12-3.41-3.12zm-.21 6.16c-.55 0-1.32-.27-1.32-.96 0-.87.96-1.2 1.78-1.2.74 0 1.09.16 1.53.38a2.022 2.022 0 0 1-1.99 1.78zm9.53-5.92l-1.93 4.88h-.06l-2-4.88h-1.81l3 6.82-1.71 3.79h1.75l4.62-10.61h-1.86zM96.24 27h1.68V15.75h-1.68V27z" fill="#FFF"/><path d="M1.39.78c-.26.28-.41.71-.41 1.27v19.9c0 .56.15.99.42 1.26l.07.06 11.15-11.15v-.25L1.46.72l-.07.06z" fill="url(#a)" transform="translate(8 6)"/>
+                                    <path d="M16.33 15.85l-3.72-3.72v-.26l3.72-3.72.08.05 4.4 2.5c1.26.71 1.26 1.88 0 2.6l-4.4 2.5-.08.05z" fill="url(#b)" transform="translate(8 6)"/>
+                                    <path d="M16.41 15.8l-3.8-3.8L1.39 23.22c.41.44 1.1.49 1.87.06l13.15-7.48" fill="url(#c)" transform="translate(8 6)"/>
+                                    <path d="M16.41 8.2L3.26.73C2.49.29 1.8.35 1.39.79L12.61 12l3.8-3.8z" fill="url(#d)" transform="translate(8 6)"/>
+                                    <path d="M24.33 21.72l-13.06 7.42c-.73.42-1.38.39-1.8.01l-.07.07.07.06c.42.38 1.07.41 1.8-.01l13.15-7.47-.09-.08z" opacity=".2" fill="#000"/>
+                                    <path d="M28.81 19.17l-4.49 2.55.08.08 4.4-2.5c.63-.36.94-.83.94-1.3-.04.43-.36.84-.93 1.17z" fill="#000" opacity=".12"/>
+                                    <path d="M11.26 6.86l17.55 9.97c.57.32.89.74.94 1.17 0-.47-.31-.94-.94-1.3L11.26 6.73C10 6.01 8.98 6.61 8.98 8.05v.13c0-1.44 1.02-2.03 2.28-1.32z" fill="#FFF" opacity=".25"/>
+                                </g>
+                            </svg>
+                        </a>
+                    </div></center>
+                    <a href="{% url 'blueprints' %}" title="Blueprints"><button class="ashoksfs_but">Blueprints</button></a>
+                    <a href="{% url 'planetsandworlds' %}" title="Planets"><button class="ashoksfs_but">Planets and Worlds</button></a>
+          
+                </div>
+                <img src="{% static 'images/ashoksfs.webp' %}" class="ashoksfs_lo" alt="Ashok SFS">
+            </div>
+            
+        </div>
+
+
+        <div class="footer">
+            <center><h2>Ascentracore Solutions</h2></center>
+            <div class="footer_con">
+                <div class="footer_img"><img src="{% static 'images/ascentra.webp' %}" class="footer_as_lo" alt="AS Logo">
+                   {% include 'social_media.html' %}
+                </div>
+                
+                <div class="services">
+                    <h2>Our services</h2>
+                    <ul class="service_list">
+                        <li><a href="https://mail.ascentracoresolutions.com/" title="ASC Note">ASC Note</a></li>
+                        <li><a href="https://sonicora.ascentracoresolutions.com/" title="SonicOra">SonicOra</a></li>
+                        <li><a href="https://skiltrix.ascentracoresolutions.com/" title="SkilTrix">SkilTrix</a></li>
+                    </ul>
+                </div>
+                <div class="terms_dis">
+                    <ul class="terms_list">
+                        <li><a href="{% url 'privacy:termsandpolicy' %}" title="Terms and Policy">Terms and policy</a></li>
+                        <li><a href="{% url 'privacy:disclaimer' %}" title="Disclaimer">Disclaimer</a></li>
+                        <li><a href="{% url 'privacy:about' %}" title="About US">About us</a></li>
+                        <li><a href="{% url 'privacy:contact' %}" title="Contact US">Contact us</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+
+    </div>
+    <script >
+      const grid_sidebar = document.querySelector('.grid_sidebar');
+      const grid = document.querySelector('.grid');
+      const x_into = document.querySelector('.as-x-lg');
+      
+      x_into.addEventListener('click', function() {
+        grid_sidebar.classList.remove('active');
+      })
+      
+      grid.addEventListener("click", function() {
+        grid_sidebar.classList.toggle('active');
+      })
+      
+    </script>    
+
+</body>
+</html>
