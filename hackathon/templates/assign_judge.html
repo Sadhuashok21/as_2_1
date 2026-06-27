@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AscAIthon 2026 | Assign Teams</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+
+        body{
+            background:#f4f7fc;
+            font-family:Segoe UI,Tahoma,Geneva,Verdana,sans-serif;
+        }
+
+        .card{
+            border:none;
+            border-radius:18px;
+            box-shadow:0 10px 25px rgba(0,0,0,.08);
+        }
+
+        .page-title{
+            font-weight:700;
+            color:#0d6efd;
+        }
+
+        .form-label{
+            font-weight:600;
+        }
+
+        .form-select{
+            border-radius:10px;
+        }
+
+        select[multiple]{
+            height:380px;
+            font-size:14px;
+        }
+
+        .table{
+            vertical-align:middle;
+        }
+
+        .table thead{
+            background:#0d6efd;
+            color:white;
+        }
+
+        .badge-count{
+            font-size:15px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div class="container py-5">
+
+    <div class="card p-4">
+
+        <div class="d-flex justify-content-between align-items-center mb-4">
+
+            <div>
+                <h2 class="page-title">
+                    Assign Teams to Judge
+                </h2>
+
+                <small class="text-muted">
+                    AscAIthon 2026 Administration
+                </small>
+            </div>
+
+        </div>
+
+
+        {% if messages %}
+            {% for message in messages %}
+
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade show">
+
+                {{ message }}
+
+                <button class="btn-close"
+                        data-bs-dismiss="alert">
+                </button>
+
+            </div>
+
+            {% endfor %}
+        {% endif %}
+
+
+        <form method="POST">
+
+            {% csrf_token %}
+
+            <div class="row">
+
+                <div class="col-md-4">
+
+                    <label class="form-label">
+                        Judge
+                    </label>
+
+                    <select class="form-select"
+                            name="judge"
+                            required>
+
+                        <option value="">
+                            Select Judge
+                        </option>
+
+                        {% for judge in judges %}
+
+                        <option value="{{ judge.id }}">
+                            {{ judge.full_name }}
+                        </option>
+
+                        {% endfor %}
+
+                    </select>
+
+                </div>
+
+                <div class="col-md-8">
+
+                    <label class="form-label">
+                        Assign Teams
+                        <span class="badge bg-primary badge-count">
+                            Max 10
+                        </span>
+                    </label>
+
+                    <select
+                        class="form-select"
+                        name="teams"
+                        multiple
+                        required>
+
+                        {% for team in teams %}
+
+                        <option value="{{ team.id }}">
+                            {{ team.team_id }} - {{ team.team_name }}
+                        </option>
+
+                        {% endfor %}
+
+                    </select>
+
+                    <small class="text-muted">
+
+                        Hold
+                        <b>Ctrl</b>
+                        (Windows) or
+                        <b>⌘ Cmd</b>
+                        (Mac)
+                        to select multiple teams.
+
+                    </small>
+
+                </div>
+
+            </div>
+
+            <div class="mt-4">
+
+                <button class="btn btn-primary btn-lg">
+
+                    Assign Teams
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+
+    <div class="card mt-5 p-4">
+
+        <h4 class="mb-4">
+
+            Assigned Teams
+
+        </h4>
+
+        <div class="table-responsive">
+
+            <table class="table table-bordered table-hover">
+
+                <thead>
+
+                <tr>
+
+                    <th width="10%">#</th>
+
+                    <th width="25%">
+                        Judge
+                    </th>
+
+                    <th width="20%">
+                        Team ID
+                    </th>
+
+                    <th>
+                        Team Name
+                    </th>
+
+                </tr>
+
+                </thead>
+
+                <tbody>
+
+                {% for assignment in assignments %}
+
+                <tr>
+
+                    <td>
+                        {{ forloop.counter }}
+                    </td>
+
+                    <td>
+
+                        {{ assignment.judge.full_name }}
+
+                    </td>
+
+                    <td>
+
+                        {{ assignment.team.team_id }}
+
+                    </td>
+
+                    <td>
+
+                        {{ assignment.team.team_name }}
+
+                    </td>
+
+                </tr>
+
+                {% empty %}
+
+                <tr>
+
+                    <td colspan="4"
+                        class="text-center text-muted">
+
+                        No teams assigned yet.
+
+                    </td>
+
+                </tr>
+
+                {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

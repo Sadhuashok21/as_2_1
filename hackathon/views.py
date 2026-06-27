@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.views import View
 from shared_lib.hackathon.models import *
 from django.contrib import messages
@@ -7,6 +7,10 @@ from shared_lib.utils import insertions
 from django.conf import settings
 import razorpay
 from django.utils import timezone
+from django.contrib import messages
+
+from .models import Team, Judge, Evaluation
+
 
 # Create your views here.
 
@@ -36,22 +40,229 @@ class SubmissionView(View):
     
 
 
-class LogIn(View):
-    def get(self, request):
-        return render(request, 'login.html')
-    
-    def post(self, request):
-        email = request.POST.get('email', '')
-        password = request.POST.get('password', '')
+from django.shortcuts import render, redirect
+from django.views import View
+from .models import Judge
 
-        if email and password:
-            user = HackathonUsers.objects.filter(email=email, password=password).first()
-            if user:
-                messages.success(request, "Logged in successfully!")
-            else:
-                messages.error(request, "Invalid credentials!")
-        return render(request, 'login.html')
-    
+
+class LogIn(View):
+
+    def get(self, request):
+        return render(request, "hack_signin.html")
+
+    def post(self, request):
+
+        username = request.POST.get("username")
+        password = request.POST.get("password")
+
+        try:
+            judge = Judge.objects.get(
+                username=username,
+                password=password,
+                is_active=True
+            )
+
+            request.session["judge_id"] = judge.id
+            request.session["judge_name"] = judge.full_name
+
+            return redirect("evaluation")
+
+        except Judge.DoesNotExist:
+            return render(request, "hack_signin.html", {
+                "error": "Invalid username or password."
+            })
+        
+
+
+class EvaluationView(View):
+
+    def get(self, request):
+
+        # Check if judge is logged in
+        if "judge_id" not in request.session:
+            return redirect("login")
+
+        judge = Judge.objects.get(id=request.session["judge_id"])
+
+        evaluated = Evaluation.objects.filter(
+        judge=judge
+        ).values_list("team_id", flat=True)
+
+        teams = Team.objects.filter(
+            judgeassignment__judge=judge
+        ).exclude(
+            id__in=evaluated
+        ).order_by("team_id")
+
+        return render(request, "hack_eval.html", {
+            "teams": teams,
+            "judge_name": request.session.get("judge_name")
+        })
+
+    def post(self, request):
+
+        if "judge_id" not in request.session:
+            return redirect("login")
+
+        team_id = request.POST.get("team")
+
+        if not team_id:
+            messages.error(request, "Please select a team.")
+            return redirect("evaluation")
+
+        try:
+            team = Team.objects.get(id=team_id)
+            judge = Judge.objects.get(id=request.session["judge_id"])
+
+            # Prevent duplicate evaluation
+            if Evaluation.objects.filter(team=team, judge=judge).exists():
+                messages.warning(
+                    request,
+                    f"You have already evaluated Team {team.team_id}. A second evaluation is not allowed."
+                )
+                return redirect("evaluation")
+
+            innovation = int(request.POST.get("innovation", 0))
+            problem = int(request.POST.get("problem", 0))
+            technical = int(request.POST.get("technical", 0))
+            uiux = int(request.POST.get("uiux", 0))
+            completeness = int(request.POST.get("completeness", 0))
+            demo = int(request.POST.get("demo", 0))
+            presentation = int(request.POST.get("presentation", 0))
+            impact = int(request.POST.get("impact", 0))
+
+            # Validate maximum marks
+            if (
+                innovation > 20 or
+                problem > 15 or
+                technical > 20 or
+                uiux > 10 or
+                completeness > 10 or
+                demo > 10 or
+                presentation > 10 or
+                impact > 5
+            ):
+                messages.error(request, "One or more marks exceed the allowed limit.")
+                return redirect("evaluation")
+
+            total = (
+                innovation +
+                problem +
+                technical +
+                uiux +
+                completeness +
+                demo +
+                presentation +
+                impact
+            )
+
+            Evaluation.objects.create(
+                team=team,
+                judge=judge,
+                innovation=innovation,
+                problem_understanding=problem,
+                technical_implementation=technical,
+                ui_ux=uiux,
+                completeness=completeness,
+                practical_demo=demo,
+                presentation=presentation,
+                impact=impact,
+                total=total
+            )
+
+            messages.success(request, "Evaluation submitted successfully.")
+
+        except Team.DoesNotExist:
+            messages.error(request, "Selected team does not exist.")
+
+        except Judge.DoesNotExist:
+            request.session.flush()
+            return redirect("login")
+
+        except ValueError:
+            messages.error(request, "Please enter valid marks.")
+
+        except Exception as e:
+            messages.error(request, str(e))
+
+        return redirect("evaluation")
+
+
+
+
+from .models import Judge, Team, JudgeAssignment
+
+
+
+from django.views import View
+from django.shortcuts import render
+from django.db.models import Avg, Sum, Count
+
+from .models import Evaluation
+
+
+class ScoreBoardView(View):
+
+    def get(self, request):
+
+        scores = (
+            Evaluation.objects
+            .values("team__team_id", "team__team_name")
+            .annotate(
+                total_score=Sum("total"),
+                average_score=Avg("total"),
+                judges=Count("judge")
+            )
+            .order_by("-average_score")
+        )
+
+        return render(request, "scoreboard.html", {
+            "scores": scores
+        })
+
+
+
+class AssignJudgeView(View):
+
+    def get(self, request):
+
+        judges = Judge.objects.filter(is_active=True)
+        teams = Team.objects.exclude(
+            id__in=JudgeAssignment.objects.values_list("team_id", flat=True)
+        )
+
+        return render(request, "assign_judge.html", {
+            "judges": judges,
+            "teams": teams
+        })
+
+    def post(self, request):
+
+        judge = Judge.objects.get(id=request.POST.get("judge"))
+        team_ids = request.POST.getlist("teams")
+
+        if len(team_ids) == 0:
+            messages.error(request, "Please select at least one team.")
+            return redirect("assign_judge")
+
+        if len(team_ids) > 10:
+            messages.error(request, "A judge can be assigned a maximum of 10 teams.")
+            return redirect("assign_judge")
+
+        for team_id in team_ids:
+
+            JudgeAssignment.objects.get_or_create(
+                judge=judge,
+                team_id=team_id
+            )
+
+        messages.success(request, "Teams assigned successfully.")
+
+        return redirect("assign_judge")
+
+
+
+
 
 class SignUp(View):
     def get(self, request):
