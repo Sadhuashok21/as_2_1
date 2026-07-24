@@ -4,7 +4,7 @@ from django.conf import settings
 from django.conf.urls.static import static 
 
 urlpatterns = [
-    path('', views.blueprints, name="blueprintss"),
+    path('', views.sfs_index, name="blueprintss"),
     path('home', views.home, name="home"),
     path('blueprints', views.blueprints, name="blueprints"),
     path('blueprints/', views.blueprints, name="blueprints_slash"),
@@ -19,6 +19,7 @@ urlpatterns = [
     path('uploads', views.Upload.as_view(), name="uploads"),
     path('upload_category', views.UploadCat.as_view(), name="upload_category"),
     path('search', views.search, name="search"),
+    path('search/<str:name>/', views.search_, name="search_"),
     path('planetsandworlds/search', views.search, name="pla_search"),
     path('blueprints/category', views.category, name="category"),
     path('logout', views.logout, name="logout"),

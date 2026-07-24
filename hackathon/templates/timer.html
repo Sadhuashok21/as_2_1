@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AScAIthon 2026 Countdown</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+    background:#000;
+    color:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    overflow:hidden;
+}
+
+.container{
+    text-align:center;
+}
+
+h1{
+    font-size:60px;
+    margin-bottom:30px;
+    letter-spacing:2px;
+}
+
+#status{
+    font-size:28px;
+    color:#00ff66;
+    margin-bottom:20px;
+}
+
+#timer{
+    font-size:180px;
+    font-weight:bold;
+    letter-spacing:8px;
+}
+
+#date{
+    margin-top:25px;
+    font-size:22px;
+    color:#ccc;
+}
+
+.warning{
+    color:#ff3b3b !important;
+}
+
+.finished{
+    color:#ff3b3b;
+    font-size:80px;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <h1>🚀 AScAIthon 2026</h1>
+
+    <div id="status">Hackathon Starts In</div>
+
+    <div id="timer">00:00:00</div>
+
+    <div id="date"></div>
+
+</div>
+
+<script>
+
+// ==========================
+// CHANGE THIS DATE & TIME
+// ==========================
+const startTime = new Date("2026-06-27T10:00:00+05:30");
+// Hackathon duration
+const duration = 24 * 60 * 60 * 1000;
+
+// ==========================
+
+const statusText=document.getElementById("status");
+const timer=document.getElementById("timer");
+const date=document.getElementById("date");
+
+date.innerHTML="Start Time: "+startTime.toLocaleString();
+
+function updateTimer(){
+
+    const now=new Date();
+
+    // BEFORE START
+    if(now<startTime){
+
+        let diff=startTime-now;
+
+        let h=Math.floor(diff/(1000*60*60));
+        let m=Math.floor((diff%(1000*60*60))/(1000*60));
+        let s=Math.floor((diff%(1000*60))/1000);
+
+        timer.innerHTML=
+            String(h).padStart(2,'0')+":"
+            +String(m).padStart(2,'0')+":"
+            +String(s).padStart(2,'0');
+
+        statusText.innerHTML="Hackathon Starts In";
+        return;
+    }
+
+    // DURING HACKATHON
+    const endTime=new Date(startTime.getTime()+duration);
+
+    let remaining=endTime-now;
+
+    if(remaining>0){
+
+        let h=Math.floor(remaining/(1000*60*60));
+        let m=Math.floor((remaining%(1000*60*60))/(1000*60));
+        let s=Math.floor((remaining%(1000*60))/1000);
+
+        timer.innerHTML=
+            String(h).padStart(2,'0')+":"
+            +String(m).padStart(2,'0')+":"
+            +String(s).padStart(2,'0');
+
+        statusText.innerHTML="⏳ Time Remaining";
+
+        // Final Hour
+        if(h===0){
+            timer.classList.add("warning");
+            statusText.classList.add("warning");
+            statusText.innerHTML="⚠ FINAL HOUR";
+        }
+
+        return;
+    }
+
+    // FINISHED
+    statusText.innerHTML="🏁 TIME'S UP";
+    timer.className="finished";
+    timer.innerHTML="00:00:00";
+
+}
+
+updateTimer();
+
+setInterval(updateTimer,1000);
+
+</script>
+
+</body>
+</html>

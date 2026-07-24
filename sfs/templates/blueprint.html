@@ -75,7 +75,7 @@
             justify-content: center;
             height: 100%;
 
-        }
+        } 
 
         .description {
             max-width: 400px;
@@ -104,7 +104,7 @@
         }
 
         .preview {
-            width: 500px
+            max-width: 500px
         }
 
 
@@ -137,6 +137,19 @@
             color: var(--gray-400);
             cursor: pointer;
         }
+
+
+        @media only screen and (min-width: 0px) and (max-width: 600px) {
+            .bp_img, .download_btn_h, .preview .preview_img  {
+                width: 97%;
+            }
+
+            .container {
+                justify-content: inherit;
+
+            }
+        }
+
     </style>
     <div class="bread_crumb">
         <p>&gt;

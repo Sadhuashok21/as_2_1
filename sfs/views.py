@@ -15,6 +15,7 @@ from django.contrib import messages
 from django.db.models import Count
 from shared_lib.utils.insertions import *
 import requests
+from shared_lib.utils import config
 
 
 # Create your views here.
@@ -31,7 +32,6 @@ def download(request, bp_id):
     blueprint.fdownloads += 1
     blueprint.downloads += 1
     blueprint.save()
-    
 
 
     file_url = "https://cdn.ascentracoresolutions.com/sfs/zipfiles/3emqqip1hf9sdj5v8cab.zip"
@@ -48,6 +48,15 @@ def download(request, bp_id):
     response['Content-Disposition'] = 'attachment; filename=' + blueprint.name + ".zip"
 
     return response
+
+
+def sfs_index(request):
+    insert_activity(get_client_ip(request), version, "sfs_index", request.session.get('user_id', 'anonymous'))
+    bp = BP.objects.filter(status="approved").order_by('?')[:10]
+    categories = BpCat.objects.filter(status="approved").annotate(
+        blueprint_count = Count('bp_categories__bp', distinct = True))[:10]
+    return render(request, "sfs_index.html", {"bp": bp, "cats": categories})
+
 
 def blueprints(request):
     # Get off value
@@ -250,11 +259,23 @@ def search(request):
     if search:
         bp = BP.objects.filter(name__icontains=search, status="approved").all()
 
+    
+        if bp.count() == 0:
+            bp = BP.objects.filter(status="approved").order_by('?')[:20]
+
+
         insert_activity(get_client_ip(request), version, "search-" + search, request.session.get('user_id', 'anonymous'))
         return render(request, "search.html", {"blueprints": bp, "query": search,})
     else: 
         insert_error(get_client_ip(request), request.session.get('user_id', 'anonymous'), version, "No search query provided", request.build_absolute_uri())
         return redirect('blueprints')
+
+def search_(request, name):
+
+    if name is not None:
+        bp = BP.objects.filter(name__icontains = name, status ="approved")
+
+    return render(request, "search.html", {"blueprints": bp})
 
 
 @method_decorator(csrf_exempt, name='dispatch')
