@@ -3,6 +3,8 @@ from django.views.generic import TemplateView
 from django.http import FileResponse, HttpResponse
 from sfs.utils import *
 from shared_lib.utils import insertions, random
+from shared_lib.sfs_core.models import *
+from django.db.models import Count
 
 class AdsTxtView(TemplateView):
     template_name = "ads.txt"
@@ -13,39 +15,44 @@ class AppAds(TemplateView):
     template_name = "app-ads.txt"
     content_type = "text/plain"
 
-    insertions.insert_activity("gjrijg", version, "app-ads.txt_viewed", "Dgds")
+    # insertions.insert_activity("gjrijg", version, "app-ads.txt_viewed", "Dgds")
 
 
 def robots_txt(request):
     content = """
-User-agent: Googlebot
-Allow: /
+        User-agent: Googlebot
+        Allow: /
 
-User-agent: Bingbot
-Allow: /
+        User-agent: Bingbot
+        Allow: /
 
-User-agent: Slurp
-Allow: /
+        User-agent: Slurp
+        Allow: /
 
-User-agent: DuckDuckBot
-Allow: /
+        User-agent: DuckDuckBot
+        Allow: /
 
-User-agent: Baiduspider
-Allow: /
+        User-agent: Baiduspider
+        Allow: /
 
-User-agent: YandexBot
-Allow: /
+        User-agent: YandexBot
+        Allow: /
 
-User-agent: *
-Allow: /
+        User-agent: *
+        Allow: /
 
-Sitemap: https://ascentracoresolutions.com/sitemap.xml
-"""
+        Sitemap: https://www.ascentracoresolutions.com/sitemap.xml
+    """
     return HttpResponse(content, content_type="text/plain")
 
 def index(request):
+    bp = BP.objects.filter(status="approved").order_by('?')[:10]
+    categories = BpCat.objects.filter(status="approved").annotate(
+        blueprint_count = Count('bp_categories__bp', distinct = True))[:10]
+    return render(request, "sfs_index.html", {"bp": bp, "cats": categories})
 
-    return render(request, "index.html", {"login": url})
+
+    #return render(request, "index.html", {"login": url})
 
 
 def er_400(request, exception):

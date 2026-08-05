@@ -26,7 +26,10 @@ sys.path.insert(0, PARENT_DIR)
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-d_jic&#-$ngu%2a-h4-yi)b+ymh%0npudpqmlr-$+!7f43vuii'
+SECRET_KEY = 'django-insecure-d_jisgreughuc&#-$ngu%2a-h4-yi)b+ymh%0npudpqmlr-$+!7f43vuii'
+
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
+SESSION_COOKIE_DOMAIN = '127.0.0.1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -80,10 +83,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'ascentracoresolutions.wsgi.application'
-
-SESSION_ENGINE = 'django.contrib.sessions.backends.db'
-SECRET_KEY = 'ashok-super-secret-key'
-SESSION_COOKIE_DOMAIN = '127.0.0.1'
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases

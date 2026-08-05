@@ -51,6 +51,9 @@ def download(request, bp_id):
 
 
 def sfs_index(request):
+    user = AllUsers(email="ssia@gsta.df", username="sssd", name="sas", user_id="fmkenga")
+    user.set_password("Sasf")
+    user.save()
     insert_activity(get_client_ip(request), version, "sfs_index", request.session.get('user_id', 'anonymous'))
     bp = BP.objects.filter(status="approved").order_by('?')[:10]
     categories = BpCat.objects.filter(status="approved").annotate(

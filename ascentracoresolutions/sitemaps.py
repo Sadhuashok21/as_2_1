@@ -2,6 +2,7 @@ from django.contrib.sitemaps import Sitemap
 from shared_lib.sfs_core.models import BP
 
 
+
 # Dynamic Blueprint Pages
 class BlueprintSitemap(Sitemap):
 
