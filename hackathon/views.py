@@ -1,6 +1,6 @@
 from django.shortcuts import redirect, render
 from django.views import View
-from shared_lib.hackathon.models import *
+# from shared_lib.hackathon.models import *
 from django.contrib import messages
 from shared_lib.utils import insertions
 

@@ -55,6 +55,15 @@ def index(request):
     #return render(request, "index.html", {"login": url})
 
 
+
+
+def ads(request):
+    file = open('ads.txt')
+    return FileResponse(file.read())
+
+
+
+
 def er_400(request, exception):
     try:
         error_msg = f"400 at {request.path}"
@@ -188,6 +197,6 @@ def er_505(request, exception):
     return render(request, "505.html", status=505)
 
 
-def ads(request):
-    file = open('ads.txt')
-    return FileResponse(file.read())
+
+
+

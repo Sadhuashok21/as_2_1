@@ -12,12 +12,14 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 import os, sys
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-GEOIP_PATH = BASE_DIR / "geoip"
 
 PARENT_DIR = os.path.dirname(BASE_DIR)
 sys.path.insert(0, PARENT_DIR)
@@ -26,10 +28,10 @@ sys.path.insert(0, PARENT_DIR)
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-d_jisgreughuc&#-$ngu%2a-h4-yi)b+ymh%0npudpqmlr-$+!7f43vuii'
+SECRET_KEY = os.getenv("SESSION_SECRET_KEY")
 
 SESSION_ENGINE = 'django.contrib.sessions.backends.db'
-SESSION_COOKIE_DOMAIN = '127.0.0.1'
+SESSION_COOKIE_DOMAIN = os.getenv("SESSION_COOKIE_DOMAIN")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -62,6 +64,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'ascentracoresolutions.middleware.ExceptionLoggingMiddleware',
+    
 ]
 
 ROOT_URLCONF = 'ascentracoresolutions.urls'
@@ -90,13 +94,17 @@ WSGI_APPLICATION = 'ascentracoresolutions.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'as_main',
-        'USER': 'root',
-        'PASSWORD': 'Ashokkumar21',
-        'PORT': '3306',
-        'HOST': 'localhost',
+        'NAME': os.getenv("DB_NAME"),
+        'USER': os.getenv("DB_USER"),
+        'PASSWORD': os.getenv("DB_PASSWORD"),
+        'PORT': os.getenv("DB_PORT"),
+        'HOST': os.getenv("DB_HOST"),
     }
 }
+
+
+
+AUTH_USER_MODEL = "sfs_core.AllUsers"
 
 
 # Password validation
@@ -129,9 +137,9 @@ USE_I18N = True
 
 USE_TZ = True
 
-RAZOR_KEY_ID = "rzp_live_SwQVIyDCE6Mfad"
+RAZOR_KEY_ID = os.getenv("RAZORPAY_KEY")
 
-RAZOR_KEY_SECRET = "uyxShb08A2B5yHMfO6fXsi6C"
+RAZOR_KEY_SECRET = os.getenv("RAZORPAY_SECRET")
 
 
 # Static files (CSS, JavaScript, Images)

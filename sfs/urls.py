@@ -24,5 +24,5 @@ urlpatterns = [
     path('blueprints/category', views.category, name="category"),
     path('logout', views.logout, name="logout"),
 
-    
+ 
 ]
